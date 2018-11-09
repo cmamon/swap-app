@@ -9,6 +9,7 @@ MongoClient.connect(url, {useNewUrlParser: true}, (err, client) => {
     let db = client.db("SwapApp");
     assert.equal(null, err);
     
+    //Exemple du cours
     app.get("/collections/properties/:title", (req, res) => {
 	console.log("route: /collections/properties/:title");
         db.collection("properties").find({"title":req.params.title}).toArray((err, documents)=> {
@@ -21,9 +22,11 @@ MongoClient.connect(url, {useNewUrlParser: true}, (err, client) => {
             }
 	    res.setHeader("Content-type", "application/json");
 	    res.end(JSON.stringify(json));
-	});
-	
+		});
     });
+
+    // Inscription
+    app.post
 });
 
 app.listen(8888);
