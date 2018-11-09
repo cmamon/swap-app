@@ -1,0 +1,56 @@
+[
+	{
+		"mail" : "pompidor@lirmm.fr",
+		"password" : "azerty",
+		"lastName" : "Pompidor",
+		"firstName" : "Pierre",
+		"city" : "Montpellier",
+		"adress" : "1 rue des pommes",
+		"phone" :  "0606060606"
+	},
+	{
+		"mail" : "julien.rousse@etu.umontpellier.fr",
+		"password" : "azerty",
+		"lastName" : "Roussé",
+		"firstName" : "Julien",
+		"city" : "Montpellier",
+		"adress" : "2 rue des pommes",
+		"phone" :  "0666666666"
+	},
+	{
+		"mail" : "christophe.quenette@etu.umontpellier.fr",
+		"password" : "azerty",
+		"lastName" : "Quenette",
+		"firstName" : "Christophe",
+		"city" : "Montpellier",
+		"adress" : "3 rue des pommes",
+		"phone" :  "0707070707"
+	},
+	{
+		"mail" : "dorian.do@etu.umontpellier.fr",
+		"password" : "azerty",
+		"lastName" : "Rousse",
+		"firstName" : "Dorian",
+		"city" : "Montpellier",
+		"adress" : "4 rue des pommes",
+		"phone" :  "0777777777"
+	},
+	{
+		"mail" : "aurelie.murcia@etu.umontpellier.fr",
+		"password" : "azerty",
+		"lastName" : "Murcia",
+		"firstName" : "Aurélie",
+		"city" : "Montpellier",
+		"adress" : "5 rue des pommes",
+		"phone" :  "0612341234"
+	},
+	{
+		"mail" : "adresseBidon@gmail.com",
+		"password" : "azerty",
+		"lastName" : "Bidon",
+		"firstName" : "Toto",
+		"city" : "Montpellier",
+		"adress" : "6 rue des pommes",
+		"phone" :  "0676543210"
+	}
+]

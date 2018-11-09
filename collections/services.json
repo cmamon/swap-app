@@ -1,0 +1,27 @@
+[
+	{
+		"serv_id" : "serv_1",
+		"description" : "Cours de mathématiques",
+		"pricePerHour" : 10 
+	},
+	{
+		"serv_id" : "serv_2",
+		"description" : "Besoin de se déplacer ?",
+		"pricePerHour" : 10 
+	},
+	{
+		"serv_id" : "serv_3",
+		"description" : "Je peux faire votre ménage pour quelques euros",
+		"pricePerHour" : 15
+	},
+	{
+		"serv_id" : "serv_4",
+		"description" : "Cours de français",
+		"pricePerHour" : 10 
+	},
+	{
+		"serv_id" : "serv_5",
+		"description" : "Un ordi à reparer ?",
+		"pricePerHour" : 10 
+	}
+]
