@@ -1,0 +1,22 @@
+[
+    {
+        "serv_id" : "serv_1",
+        "keyword" : ["cours", "mathématiques"]
+    },
+    {
+        "serv_id" : "serv_2",
+        "keyword" : ["covoiturage", "transport"]
+    },
+    {
+        "serv_id" : "serv_3",
+        "keyword" : ["ménage", "nottoyage", "tâches ménagères"]
+    },
+    {
+        "serv_id" : "serv_4",
+        "keyword" : ["cours", "français", "études", "école"]
+    },
+    {
+        "serv_id" : "serv_5",
+        "keyword" : ["réparation", "ordinateur"]
+    }
+]
