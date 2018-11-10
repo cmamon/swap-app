@@ -1,34 +1,34 @@
 [
 	{
-		"prop_id" : "prop_1",
+		"propId" : "prop_1",
 		"title" : "marteau",
 		"description" : "Outil de travail",
 		"pictureLink" : "lien1",
 		"price" : 10
 	},
 	{
-		"prop_id" : "prop_2",
+		"propId" : "prop_2",
 		"title" : "voiture",
 		"descriptif" : "Je mets a disposition ma voiture",
 		"pictureLink" : "lien2",
-		"price" : 4000 
+		"price" : 4000
 	},
 	{
-		"prop_id" : "prop_3",
+		"propId" : "prop_3",
 		"title" : "tondeuse",
 		"descriptif" : "Je peux vous preter ma tondeuse",
 		"pictureLink" : "lien3",
-		"price" : 150 
+		"price" : 150
 	},
 	{
-		"prop_id" : "prop_4",
+		"propId" : "prop_4",
 		"title" : "ski",
 		"descriptif" : "Je ne partirai pas en vacances donc je peux preter mes skis",
 		"pictureLink" : "lien4",
-		"price" : 200 
+		"price" : 200
 	},
 	{
-		"prop_id" : "prop_5",
+		"propId" : "prop_5",
 		"title" : "clé anglaise",
 		"descriptif" : "Si besoin",
 		"pictureLink" : "lien5",

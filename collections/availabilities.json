@@ -1,0 +1,90 @@
+[
+	{
+		"availabilityId" : "availability_1",
+		"propOrServ" : "property",
+		"propOrServId" : "prop_1",
+		"weekNumber" : 42,
+		"dayNumber" : 1,
+		"AMPM" : "PM"
+	},
+	{
+		"availabilityId" : "availability_2",
+		"propOrServ" : "property",
+		"propOrServId" : "prop_1",
+		"weekNumber" : 42,
+		"dayNumber" : 2,
+		"AMPM" : "PM"
+	},
+	{
+		"availabilityId" : "availability_3",
+		"propOrServ" : "property",
+		"propOrServId" : "prop_2",
+		"weekNumber" : 42,
+		"dayNumber" : 1,
+		"AMPM" : "AM"
+	},
+	{
+		"availabilityId" : "availability_4",
+		"propOrServ" : "property",
+		"propOrServId" : "prop_3",
+		"weekNumber" : 42,
+		"dayNumber" : 1,
+		"AMPM" : "PM"
+	},
+	{
+		"availabilityId" : "availability_5",
+		"propOrServ" : "property",
+		"propOrServId" : "prop_4",
+		"weekNumber" : 42,
+		"dayNumber" : 1,
+		"AMPM" : "AM"
+	},
+	{
+		"availabilityId" : "availability_6",
+		"propOrServ" : "property",
+		"propOrServId" : "prop_5",
+		"weekNumber" : 42,
+		"dayNumber" : 1,
+		"AMPM" : "AM"
+	},
+	{
+		"availabilityId" : "availability_7",
+		"propOrServ" : "service",
+		"propOrServId" : "serv_1",
+		"weekNumber" : 42,
+		"dayNumber" : 1,
+		"AMPM" : "PM"
+	},
+	{
+		"availabilityId" : "availability_8",
+		"propOrServ" : "service",
+		"propOrServId" : "serv_2",
+		"weekNumber" : 42,
+		"dayNumber" : 1,
+		"AMPM" : "PM"
+	},
+	{
+		"availabilityId" : "availability_9",
+		"propOrServ" : "serv",
+		"propOrServId" : "serv_3",
+		"weekNumber" : 42,
+		"dayNumber" : 1,
+		"AMPM" : "PM"
+	},
+	{
+		"availabilityId" : "availability_10",
+		"propOrServ" : "serv",
+		"propOrServId" : "serv_4",
+		"weekNumber" : 42,
+		"dayNumber" : 1,
+		"AMPM" : "PM"
+	},
+	{
+		"availabilityId" : "availability_11",
+		"propOrServ" : "serv",
+		"propOrServId" : "serv_5",
+		"weekNumber" : 42,
+		"dayNumber" : 1,
+		"AMPM" : "PM"
+	}
+]

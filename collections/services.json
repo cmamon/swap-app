@@ -1,32 +1,32 @@
 [
 	{
-		"serv_id" : "serv_1",
+		"servId" : "serv_1",
 		"title" : "Cours de math",
 		"description" : "Cours de mathématiques",
-		"pricePerHour" : 10 
+		"pricePerHour" : 10
 	},
 	{
-		"serv_id" : "serv_2",
+		"servId" : "serv_2",
 		"title" : "Covoiturage/taxi",
 		"description" : "Besoin de se déplacer ?",
-		"pricePerHour" : 10 
+		"pricePerHour" : 10
 	},
 	{
-		"serv_id" : "serv_3",
+		"servId" : "serv_3",
 		"title" : "Menage",
 		"description" : "Je peux faire votre ménage pour quelques euros",
 		"pricePerHour" : 15
 	},
 	{
-		"serv_id" : "serv_4",
+		"servId" : "serv_4",
 		"title" : "Cours de fr",
 		"description" : "Cours de français",
-		"pricePerHour" : 10 
+		"pricePerHour" : 10
 	},
 	{
-		"serv_id" : "serv_5",
+		"servId" : "serv_5",
 		"title" : "Informaticien a votre service",
 		"description" : "Un ordi à reparer ?",
-		"pricePerHour" : 10 
+		"pricePerHour" : 10
 	}
 ]

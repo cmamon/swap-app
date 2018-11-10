@@ -1,56 +1,56 @@
 [
     {
-        "use_id" : "use_1",
+        "useId" : "use_1",
         "mail" : "christophe.quenette@etu.umontpellier.fr",
-        "prop_or_serv" : "service",
-        "id_prop_or_serv" : "serv_1",
-        "week_number" : 40,
-        "day_number" : 3,
-        "am_pm" : "PM"
+        "propOrServ" : "service",
+        "propOrServId" : "serv_1",
+        "weekNumber" : 40,
+        "dayNumber" : 3,
+        "AMPM" : "PM"
     },
     {
-        "use_id" : "use_2",
+        "useId" : "use_2",
         "mail" : "julien.rousse@etu.umontpellier.fr",
-        "prop_or_serv" : "property",
-        "id_prop_or_serv" : "prop_1",
-        "week_number" : 12,
-        "day_number" : 7,
-        "am_pm" : "AM"
+        "propOrServ" : "property",
+        "propOrServId" : "prop_1",
+        "weekNumber" : 12,
+        "dayNumber" : 7,
+        "AMPM" : "AM"
     },
     {
-        "use_id" : "use_3",
+        "useId" : "use_3",
         "mail" : "pierre.pompidor@lirmm.fr",
-        "prop_or_serv" : "service",
-        "id_prop_or_serv" : "serv_1",
-        "week_number" : 25,
-        "day_number" : 1,
-        "am_pm" : "AM"
+        "propOrServ" : "service",
+        "propOrServId" : "serv_1",
+        "weekNumber" : 25,
+        "dayNumber" : 1,
+        "AMPM" : "AM"
     },
     {
-        "use_id" : "use_4",
+        "useId" : "use_4",
         "mail" : "christophe.quenette@etu.umontpellier.fr",
-        "prop_or_serv" : "property",
-        "id_prop_or_serv" : "prop_1",
-        "week_number" : 17,
-        "day_number" : 4,
-        "am_pm" : "PM"
+        "propOrServ" : "property",
+        "propOrServId" : "prop_1",
+        "weekNumber" : 17,
+        "dayNumber" : 4,
+        "AMPM" : "PM"
     },
     {
-        "use_id" : "use_5",
+        "useId" : "use_5",
         "mail" : "dorian@do.fr",
-        "prop_or_serv" : "property",
-        "id_prop_or_serv" : "prop_1",
-        "week_number" : 50,
-        "day_number" : 3,
-        "am_pm" : "PM"
+        "propOrServ" : "property",
+        "propOrServId" : "prop_1",
+        "weekNumber" : 50,
+        "dayNumber" : 3,
+        "AMPM" : "PM"
     },
     {
-        "use_id" : "use_6",
+        "useId" : "use_6",
         "mail" : "aurelie.murcia@etu.umontpellier.fr",
-        "prop_or_serv" : "property",
-        "id_prop_or_serv" : "prop_1",
-        "week_number" : 8,
-        "day_number" : 5,
-        "am_pm" : "PM"
+        "propOrServ" : "property",
+        "propOrServId" : "prop_1",
+        "weekNumber" : 8,
+        "dayNumber" : 5,
+        "AMPM" : "PM"
     }
 ]

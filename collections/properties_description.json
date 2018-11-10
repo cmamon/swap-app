@@ -1,22 +1,22 @@
 [
     {
-        "prop_id" : "prop_1",
+        "propId" : "prop_1",
         "keyword" : ["outil", "bricolage", "marteau"]
     },
     {
-        "prop_id" : "prop_2",
+        "propId" : "prop_2",
         "keyword" : ["vehicule", "voiture"]
     },
     {
-        "prop_id" : "prop_3",
+        "propId" : "prop_3",
         "keyword" :  ["jardin", "gazon", "tondeuse"]
     },
     {
-        "prop_id" : "prop_4",
+        "propId" : "prop_4",
         "keyword" : ["sport", "hiver", "ski"]
     },
     {
-        "prop_id" : "prop_5",
+        "propId" : "prop_5",
         "keyword" : ["outil", "clé anglaise", "bricolage"]
     }
 ]
