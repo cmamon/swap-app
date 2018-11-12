@@ -5,7 +5,7 @@
 		"lastName" : "Pompidor",
 		"firstName" : "Pierre",
 		"city" : "Montpellier",
-		"adress" : "1 rue des pommes",
+		"address" : "1 rue des pommes",
 		"phone" :  "0606060606"
 	},
 	{
@@ -14,7 +14,7 @@
 		"lastName" : "Roussé",
 		"firstName" : "Julien",
 		"city" : "Montpellier",
-		"adress" : "2 rue des pommes",
+		"address" : "2 rue des pommes",
 		"phone" :  "0666666666"
 	},
 	{
@@ -23,7 +23,7 @@
 		"lastName" : "Quenette",
 		"firstName" : "Christophe",
 		"city" : "Montpellier",
-		"adress" : "3 rue des pommes",
+		"address" : "3 rue des pommes",
 		"phone" :  "0707070707"
 	},
 	{
@@ -32,7 +32,7 @@
 		"lastName" : "Rousse",
 		"firstName" : "Dorian",
 		"city" : "Montpellier",
-		"adress" : "4 rue des pommes",
+		"address" : "4 rue des pommes",
 		"phone" :  "0777777777"
 	},
 	{
@@ -41,16 +41,16 @@
 		"lastName" : "Murcia",
 		"firstName" : "Aurélie",
 		"city" : "Montpellier",
-		"adress" : "5 rue des pommes",
+		"address" : "5 rue des pommes",
 		"phone" :  "0612341234"
 	},
 	{
-		"mail" : "adresseBidon@gmail.com",
+		"mail" : "addresseBidon@gmail.com",
 		"password" : "azerty",
 		"lastName" : "Bidon",
 		"firstName" : "Toto",
 		"city" : "Montpellier",
-		"adress" : "6 rue des pommes",
+		"address" : "6 rue des pommes",
 		"phone" :  "0676543210"
 	}
 ]
