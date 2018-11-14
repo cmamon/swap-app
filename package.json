@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/swap_server.js"
   },
   "repository": {
     "type": "git",
@@ -14,8 +15,10 @@
   "license": "ISC",
   "dependencies": {
     "assert": "^1.4.1",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "http": "0.0.0",
     "mongodb": "^3.1.9"
-  }
+  },
+  "devDependencies": {}
 }
