@@ -38,30 +38,81 @@ MongoClient.connect(url, { useNewUrlParser : true }, (err, client) => {
     assert.equal(null, err);
 
     // Registration of a new member
-    app.post('/src/collections/members', (req, res) => {
+    app.post('/user/register', (req, res) => {
         console.log(req.body);
         res.status(200).send(req.body);
         insertInCollection(db, 'members', req.body);
     });
 
-
-
-    app.post('/src/collections/properties', (req, res) => {
+    // Property creation
+    app.post('/property/add', (req, res) => {
         console.log(req.body);
         res.status(200).send(req.body);
         insertInCollection(db, 'properties', req.body);
     });
 
-    app.delete('/src/collections/properties/:propId', (req, res) => {
+    // Property delete
+    app.delete('/property/delete', (req, res) => {
         console.log(req.body);
         res.status(200).send(req.body);
         deleteFromCollection(db, 'properties', req.body);
     });
 
-    app.post('/src/collections/uses', (req, res) => {
+    // Property reservation
+    app.post('/use/reservation', (req, res) => {
         console.log(req.body);
         res.status(200).send(req.body);
         insertInCollection(db, 'uses', req.body);
     });
 
+    // Service creation
+    app.post('/service/add', (req, res) => {
+        console.log(req.body);
+        res.status(200).send(req.body);
+        insertInCollection(db, 'properties', req.body);
+    });
+
+    // Service delete
+    app.delete('/service/delete', (req, res) => {
+        console.log(req.body);
+        res.status(200).send(req.body);
+        deleteFromCollection(db, 'properties', req.body);
+    });
+
+    // Service reservation
+    app.post('/service/reservation', (req, res) => {
+        console.log(req.body);
+        res.status(200).send(req.body);
+        insertInCollection(db, 'uses', req.body);
+    });
+
+    // Research with keywords and date.
+    app.post('/search', (req, res) => {
+        db.collection("properties_description").find({"keyword": {$in: req.body.research}}).toArray((err, documents)=> {
+
+            let propertiesList = [];
+            res.setHeader("Content-type", "application/json");
+            let nbResultats = documents.length;
+            let numResultats = 0;
+            for (let doc of documents) {
+                db.collection("properties").find({"propId":doc.propId}).toArray((err, documents)=> {
+                    let prop = documents[0];
+
+                    //if(date pas defaut)
+                    db.collection("availabilities").find({"propOrServId":prop.propId, 
+                        "weekNumber" : req.body.date.week, "dayNumber" : req.body.date.day, "AMPM" : req.body.date.ampm}).toArray((err, documents)=> {
+                            if(documents[0]) propertiesList.push(prop);
+                            numResultats++;
+                            if (numResultats == nbResultats) res.end(JSON.stringify(propertiesList));
+                    });
+
+                    /*
+                    else{
+                        propertiesList.push(prop);
+                    }
+                    */
+                });
+            }
+        }); 
+    });
 });

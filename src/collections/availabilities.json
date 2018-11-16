@@ -27,7 +27,7 @@
 		"availabilityId" : "availability_4",
 		"propOrServ" : "property",
 		"propOrServId" : "prop_3",
-		"weekNumber" : 42,
+		"weekNumber" : 43,
 		"dayNumber" : 1,
 		"AMPM" : "PM"
 	},
@@ -43,9 +43,9 @@
 		"availabilityId" : "availability_6",
 		"propOrServ" : "property",
 		"propOrServId" : "prop_5",
-		"weekNumber" : 42,
+		"weekNumber" : 43,
 		"dayNumber" : 1,
-		"AMPM" : "AM"
+		"AMPM" : "PM"
 	},
 	{
 		"availabilityId" : "availability_7",

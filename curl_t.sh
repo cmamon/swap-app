@@ -1,0 +1,1 @@
+curl --header "Content-type: application/json" -X POST --data '{"research" : ["tondeuse", "bricolage"], "date" : {"day" : 1, "week" : 43, "ampm" : "PM"}}' localhost:8888/search
