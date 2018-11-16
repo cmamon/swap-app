@@ -1,7 +1,7 @@
 [
     {
         "useId" : "use_1",
-        "mail" : "christophe.quenette@etu.umontpellier.fr",
+        "email" : "christophe.quenette@etu.umontpellier.fr",
         "propOrServ" : "service",
         "propOrServId" : "serv_1",
         "weekNumber" : 40,
@@ -10,7 +10,7 @@
     },
     {
         "useId" : "use_2",
-        "mail" : "julien.rousse@etu.umontpellier.fr",
+        "email" : "julien.rousse@etu.umontpellier.fr",
         "propOrServ" : "property",
         "propOrServId" : "prop_1",
         "weekNumber" : 12,
@@ -19,7 +19,7 @@
     },
     {
         "useId" : "use_3",
-        "mail" : "pierre.pompidor@lirmm.fr",
+        "email" : "pierre.pompidor@lirmm.fr",
         "propOrServ" : "service",
         "propOrServId" : "serv_1",
         "weekNumber" : 25,
@@ -28,7 +28,7 @@
     },
     {
         "useId" : "use_4",
-        "mail" : "christophe.quenette@etu.umontpellier.fr",
+        "email" : "christophe.quenette@etu.umontpellier.fr",
         "propOrServ" : "property",
         "propOrServId" : "prop_1",
         "weekNumber" : 17,
@@ -37,7 +37,7 @@
     },
     {
         "useId" : "use_5",
-        "mail" : "dorian@do.fr",
+        "email" : "dorian@do.fr",
         "propOrServ" : "property",
         "propOrServId" : "prop_1",
         "weekNumber" : 50,
@@ -46,7 +46,7 @@
     },
     {
         "useId" : "use_6",
-        "mail" : "aurelie.murcia@etu.umontpellier.fr",
+        "email" : "aurelie.murcia@etu.umontpellier.fr",
         "propOrServ" : "property",
         "propOrServId" : "prop_1",
         "weekNumber" : 8,
