@@ -1,1 +1,1 @@
-curl --header "Content-type: application/json" -X POST --data '{"research" : ["tondeuse", "bricolage"], "date" : {"day" : 1, "week" : 43, "ampm" : "PM"}}' localhost:8888/search
+curl --header "Content-type: application/json" -X DELETE --data '{"propId" : "prop_1"}' localhost:8888/property

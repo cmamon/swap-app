@@ -37,50 +37,43 @@ MongoClient.connect(url, { useNewUrlParser : true }, (err, client) => {
     let db = client.db(dbName);
     assert.equal(null, err);
 
-    // Registration of a new member
+    // Registration of a new member TESTED
     app.post('/user/register', (req, res) => {
         console.log(req.body);
         res.status(200).send(req.body);
-        insertInCollection(db, 'members', req.body);
+        insertInCollection(db, 'users', req.body);
     });
 
-    // Property creation
-    app.post('/property/add', (req, res) => {
+    // Property creation TESTED
+    app.post('/property', (req, res) => {
         console.log(req.body);
         res.status(200).send(req.body);
         insertInCollection(db, 'properties', req.body);
     });
 
-    // Property delete
-    app.delete('/property/delete', (req, res) => {
+    // Property delete TESTED
+    app.delete('/property', (req, res) => {
         console.log(req.body);
         res.status(200).send(req.body);
         deleteFromCollection(db, 'properties', req.body);
     });
 
-    // Property reservation
-    app.post('/use/reservation', (req, res) => {
+    // Service creation TESTED
+    app.post('/service', (req, res) => {
         console.log(req.body);
         res.status(200).send(req.body);
-        insertInCollection(db, 'uses', req.body);
+        insertInCollection(db, 'services', req.body);
     });
 
-    // Service creation
-    app.post('/service/add', (req, res) => {
+    // Service delete TESTED
+    app.delete('/service', (req, res) => {
         console.log(req.body);
         res.status(200).send(req.body);
-        insertInCollection(db, 'properties', req.body);
+        deleteFromCollection(db, 'services', req.body);
     });
 
-    // Service delete
-    app.delete('/service/delete', (req, res) => {
-        console.log(req.body);
-        res.status(200).send(req.body);
-        deleteFromCollection(db, 'properties', req.body);
-    });
-
-    // Service reservation
-    app.post('/service/reservation', (req, res) => {
+    // Service reservation TESTED
+    app.post('/booking', (req, res) => {
         console.log(req.body);
         res.status(200).send(req.body);
         insertInCollection(db, 'uses', req.body);
