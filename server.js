@@ -38,10 +38,24 @@ MongoClient.connect(url, { useNewUrlParser : true }, (err, client) => {
     assert.equal(null, err);
 
     // Registration of a new member TESTED
-    app.post('/user/register', (req, res) => {
+    app.post('/users', (req, res) => {
         console.log(req.body);
         res.status(200).send(req.body);
         insertInCollection(db, 'users', req.body);
+    });
+
+    app.get('/users', (req, res) => {
+        res.status(200);
+
+        db.collection("users").find({}).toArray((err, documents) => {
+            let json = [];
+            for(let doc of documents){
+                json.push(doc);
+                console.log(doc);
+            }
+            res.setHeader("Content-type", "application/json");
+            res.end(JSON.stringify(json));
+        });
     });
 
     // Property creation TESTED
