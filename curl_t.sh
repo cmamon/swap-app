@@ -1,0 +1,1 @@
+curl --header "Content-type: application/json" -X DELETE --data '{"propId" : "prop_1"}' localhost:8888/property
