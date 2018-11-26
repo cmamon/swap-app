@@ -1,4 +1,4 @@
-mongoimport --db SWAP --collection members --file ./src/collections/users.json --jsonArray --drop
+mongoimport --db SWAP --collection users --file ./src/collections/users.json --jsonArray --drop
 mongoimport --db SWAP --collection properties --file ./src/collections/properties.json --jsonArray --drop
 mongoimport --db SWAP --collection services --file ./src/collections/services.json --jsonArray --drop
 mongoimport --db SWAP --collection availabilities --file ./src/collections/availabilities.json --jsonArray --drop
