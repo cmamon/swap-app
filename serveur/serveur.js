@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser');
 const express = require('express');
+const cors = require('cors');
 
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017/SWAP';
@@ -15,6 +16,7 @@ const userRoutes = require('./src/routes/user_routes.js');
 const propertyRoutes = require('./src/routes/property_routes.js');
 const serviceRoutes = require('./src/routes/service_routes.js');
 
+app.use(cors());
 app.use(bodyParser.urlencoded( { extended: true } ));
 app.use(bodyParser.json());
 
@@ -26,6 +28,8 @@ app.use((req, res, next) => {
 app.use('/users', userRoutes);
 app.use('/properties', propertyRoutes);
 app.use('/services', serviceRoutes);
+
+
 
 let port = process.env.PORT || 8888;
 
