@@ -1,25 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UserListComponent } from './users/user-list/user-list.component';
-import { UserService } from './users/user.service';
 import { RegistrationComponent } from './registration/registration.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserListComponent,
-    RegistrationComponent,
-    AuthentificationComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule
-  ],
-  providers: [UserService],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        FormsModule
+    ],
+    declarations: [
+        AppComponent,
+        UserListComponent,
+        RegistrationComponent,
+        AuthentificationComponent
+    ],
+    bootstrap: [ AppComponent ]
 })
+
 export class AppModule { }

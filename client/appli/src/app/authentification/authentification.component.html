@@ -1,3 +1,25 @@
-<p>
-  authentification works!
-</p>
+<!-- <form *ngIf="!isLoggedIn" method="post">
+    <div class="form-group">
+        <label for="login"> Login </label>
+        <input type="text" class="form-control" id="login" required name="login"
+                placeholder="email" />
+    </div>
+</form> -->
+<form *ngIf="!isLoggedIn" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <div class="form-group">
+        <label for="login"> Login </label>
+        <input type="text" class="form-control" id="login" required name="login"
+                placeholder="email" [(ngModel)]="login" />
+    </div>
+    <div>
+        <label for="pwd"> Password </label>
+        <input type="password" class="form-control" id="pwd" required name="pwd"
+                placeholder="password" [(ngModel)]="pwd" />
+    </div>
+    <button type="submit">Submit</button>
+</form>
+<div *ngIf="isLoggedIn">
+    {{login}}
+    <br><br>
+    <button (click)="logout()"> Log out </button>
+</div>
