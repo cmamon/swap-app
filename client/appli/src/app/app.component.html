@@ -1,10 +1,13 @@
 <div class="container">
-    <h1>{{title}}</h1>
+    <mat-toolbar color="warn">
+        <mat-toolbar-row #toolbarRow>
+            <a mat-button routerLink="/">{{title}}</a>
+            <!-- This fills the remaining space of the current row -->
+            <span class="example-fill-remaining-space"></span>
+            <a mat-button routerLink="/users">User List</a>
+            <a mat-button routerLink="/auth">Log in</a>
+        </mat-toolbar-row>
+    </mat-toolbar>
     <router-outlet></router-outlet>
-    <nav>
-        <ul>
-            <li><a routerLink="/users">User List</a></li>
-            <li><a routerLink="/auth">Log in</a></li>
-        </ul>
-    </nav>
+
 </div>
