@@ -1,25 +1,36 @@
-<!-- <form *ngIf="!isLoggedIn" method="post">
-    <div class="form-group">
-        <label for="login"> Login </label>
-        <input type="text" class="form-control" id="login" required name="login"
-                placeholder="email" />
-    </div>
-</form> -->
-<form *ngIf="!isLoggedIn" (ngSubmit)="onSubmit()" #loginForm="ngForm">
-    <div class="form-group">
-        <label for="login"> Login </label>
-        <input type="text" class="form-control" id="login" required name="login"
-                placeholder="email" [(ngModel)]="login" />
-    </div>
-    <div>
-        <label for="pwd"> Password </label>
-        <input type="password" class="form-control" id="pwd" required name="pwd"
-                placeholder="password" [(ngModel)]="pwd" />
-    </div>
-    <button type="submit">Submit</button>
-</form>
+<mat-card>
+    <form *ngIf="!isLoggedIn" (submit)="onSubmit(loginForm)" #loginForm="ngForm">
+        <mat-form-field>
+            <input 
+                matInput
+                type="text"
+                id="login" 
+                ngModel
+                required 
+                name="login"
+                placeholder="Email"
+                #login="ngModel"
+                />
+            <mat-error *ngIf="pwd.invalid">Please enter an Email.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input 
+                matInput
+                type="password" 
+                id="pwd" 
+                ngModel
+                required 
+                name="pwd"
+                placeholder="Password" 
+                #pwd="ngModel"/>
+            <mat-error *ngIf="pwd.invalid">Please enter a Password.</mat-error>
+        </mat-form-field>
+        
+        <button mat-raised-button type="submit">Submit</button>
+    </form>
+</mat-card>
 <div *ngIf="isLoggedIn">
     {{login}}
     <br><br>
-    <button (click)="logout()"> Log out </button>
+    <button mat-raised-button (click)="logout()"> Log out </button>
 </div>

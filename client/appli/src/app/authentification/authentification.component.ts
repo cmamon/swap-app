@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgForm } from '@angular/forms';
+import { AuthentificationService } from '../authentification.service';
 
 @Component({
     selector: 'app-authentification',
@@ -8,16 +9,19 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 
 export class AuthentificationComponent {
-    private login : string;
-    private pwd : string;
-    private isLoggedIn: boolean = false;
 
-    onSubmit() {
-        // No verif
-        this.isLoggedIn = true;
+    public isLoggedIn = false;
+
+    constructor(private service: AuthentificationService) {}
+
+    onSubmit(form: NgForm) {
+        if (form.invalid) {
+          return;
+        }
+        this.isLoggedIn = this.service.verif(form.value.login, form.value.pwd);
     }
 
-    logout(){
+    logout() {
         this.isLoggedIn = false;
     }
 }
