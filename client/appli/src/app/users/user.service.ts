@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class UserService {
   constructor(private http: HttpClient) { }
   getUsers(): Observable<any> {
-    const o: Observable<any> = this.http.get('http://localhost:8888/users');
+    var o: Observable<any> = this.http.get('http://localhost:8888/users');
     return o;
   }
 

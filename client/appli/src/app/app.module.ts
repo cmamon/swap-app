@@ -7,6 +7,7 @@ import {
     MatButtonModule,
     MatListModule,
     MatCardModule,
+    MatTableModule,
     MatToolbarModule } from '@angular/material';
 
 import { NgModule } from '@angular/core';
@@ -27,11 +28,12 @@ import { AuthentificationService } from './authentification.service';
         FormsModule,
         HttpClientModule,
         MatButtonModule,
+        MatCardModule,
+        MatInputModule,
         MatListModule,
+        MatTableModule,
         MatToolbarModule,
         AppRoutingModule,
-        MatInputModule,
-        MatCardModule
     ],
     declarations: [
         AppComponent,

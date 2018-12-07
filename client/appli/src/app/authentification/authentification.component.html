@@ -1,12 +1,14 @@
 <mat-card>
+    <mat-card-title> Please log in </mat-card-title>
+
     <form *ngIf="!isLoggedIn" (submit)="onSubmit(loginForm)" #loginForm="ngForm">
         <mat-form-field>
-            <input 
+            <input
                 matInput
                 type="text"
-                id="login" 
+                id="login"
                 ngModel
-                required 
+                required
                 name="login"
                 placeholder="Email"
                 #login="ngModel"
@@ -14,18 +16,18 @@
             <mat-error *ngIf="pwd.invalid">Please enter an Email.</mat-error>
         </mat-form-field>
         <mat-form-field>
-            <input 
+            <input
                 matInput
-                type="password" 
-                id="pwd" 
+                type="password"
+                id="pwd"
                 ngModel
-                required 
+                required
                 name="pwd"
-                placeholder="Password" 
+                placeholder="Password"
                 #pwd="ngModel"/>
             <mat-error *ngIf="pwd.invalid">Please enter a Password.</mat-error>
         </mat-form-field>
-        
+
         <button mat-raised-button type="submit">Submit</button>
     </form>
 </mat-card>

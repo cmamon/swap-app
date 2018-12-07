@@ -16,4 +16,13 @@ export class UserListComponent implements OnInit {
             this.userList = res;
         });
     }
+
+    displayedColumns: string[] = [
+        'email',
+        'firstName',
+        'lastName',
+        'city',
+        'address',
+        'phone'
+    ];
 }

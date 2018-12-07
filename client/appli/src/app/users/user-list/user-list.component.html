@@ -1,7 +1,38 @@
-<p> Liste des membres </p>
-<ul>
-	<li *ngFor = "let user of userList">
-		{{user.firstName}}
-		{{user.lastName}}
-	</li>
-</ul>
+<mat-card>
+	<mat-card-title> Users list </mat-card-title>
+
+	<table mat-table [dataSource]="userList" class="mat-elevation-z8">
+		<!-- <ng-container matColumnDef="position">
+			<th mat-header-cell *matHeaderCellDef> No. </th>
+			  <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+		</ng-container> -->
+		<ng-container matColumnDef="email">
+			<th mat-header-cell *matHeaderCellDef> Email </th>
+			<td mat-cell *matCellDef="let user"> {{user.email}} </td>
+		</ng-container>
+		<ng-container matColumnDef="firstName">
+			<th mat-header-cell *matHeaderCellDef> Firstname </th>
+			<td mat-cell *matCellDef="let user"> {{user.firstName}} </td>
+		</ng-container>
+		<ng-container matColumnDef="lastName">
+			<th mat-header-cell *matHeaderCellDef> Lastname </th>
+		  	<td mat-cell *matCellDef="let user"> {{user.lastName}} </td>
+		</ng-container> -->
+		<ng-container matColumnDef="city">
+			<th mat-header-cell *matHeaderCellDef> City </th>
+			<td mat-cell *matCellDef="let user"> {{user.city}} </td>
+		</ng-container>
+		<ng-container matColumnDef="address">
+			<th mat-header-cell *matHeaderCellDef> Address </th>
+			<td mat-cell *matCellDef="let user"> {{user.address}} </td>
+		</ng-container>
+		<ng-container matColumnDef="phone">
+			<th mat-header-cell *matHeaderCellDef> Phone </th>
+			<td mat-cell *matCellDef="let user"> {{user.phone}} </td>
+		</ng-container>
+
+		<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+		<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+	</table>
+
+</mat-card>
