@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
-    MatInputModule,
     MatButtonModule,
-    MatListModule,
     MatCardModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatListModule,
+    MatPaginatorModule,
     MatTableModule,
     MatToolbarModule } from '@angular/material';
 
@@ -29,8 +31,10 @@ import { AuthentificationService } from './authentification.service';
         HttpClientModule,
         MatButtonModule,
         MatCardModule,
+        MatCheckboxModule,
         MatInputModule,
         MatListModule,
+        MatPaginatorModule,
         MatTableModule,
         MatToolbarModule,
         AppRoutingModule,
