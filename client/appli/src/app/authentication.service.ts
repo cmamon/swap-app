@@ -1,6 +1,6 @@
 
 
-export class AuthentificationService {
+export class AuthenticationService {
 
     verif(login: string, pwd: string) {
         // Verification

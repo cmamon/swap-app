@@ -17,10 +17,10 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { AuthentificationComponent } from './authentification/authentification.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserListComponent } from './users/user-list/user-list.component';
-import { AuthentificationService } from './authentification.service';
+import { AuthenticationService } from './authentication.service';
 
 
 @NgModule({
@@ -43,10 +43,10 @@ import { AuthentificationService } from './authentification.service';
         AppComponent,
         UserListComponent,
         RegistrationComponent,
-        AuthentificationComponent
+        AuthenticationComponent
     ],
     providers: [
-        AuthentificationService
+        AuthenticationService
     ],
     bootstrap: [ AppComponent ]
 })

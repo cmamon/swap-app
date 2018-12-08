@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthentificationService } from '../authentification.service';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
-    selector: 'app-authentification',
-    templateUrl: './authentification.component.html',
-    styleUrls: [ './authentification.component.css' ]
+    selector: 'app-authentication',
+    templateUrl: './authentication.component.html',
+    styleUrls: [ './authentication.component.css' ]
 })
 
-export class AuthentificationComponent {
+export class AuthenticationComponent {
 
     public isLoggedIn = false;
 
-    constructor(private service: AuthentificationService) {}
+    constructor(private service: AuthenticationService) {}
 
     onSubmit(form: NgForm) {
         if (form.invalid) {
