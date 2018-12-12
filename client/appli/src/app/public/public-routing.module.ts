@@ -5,8 +5,13 @@ import { AuthenticationComponent } from '../authentication/authentication.compon
 import { PublicComponent } from './public.component';
 
 const routes : Routes = [
-    { path: '', component: PublicComponent },
-    { path: 'auth', component: AuthenticationComponent },
+    {
+        path: '',
+        component: PublicComponent,
+        children: [
+            { path: 'auth', component: AuthenticationComponent },
+        ]
+    }
 ];
 
 @NgModule({

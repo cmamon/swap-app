@@ -6,9 +6,14 @@ import { AuthenticationComponent } from '../authentication/authentication.compon
 import { UserListComponent } from '../users/user-list/user-list.component';
 
 const routes : Routes = [
-    { path: 'admin', component: AdminComponent },
-    { path: 'admin/auth', component: AuthenticationComponent },
-    { path: 'admin/users', component: UserListComponent },
+    {
+        path: 'admin',
+        component: AdminComponent,
+        children: [
+            { path: 'auth', component: AuthenticationComponent },
+            { path: 'users', component: UserListComponent },
+        ]
+    }
 ];
 
 @NgModule({
