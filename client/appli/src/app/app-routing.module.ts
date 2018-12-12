@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { UserListComponent } from './users/user-list/user-list.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
-
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 
 const routes : Routes = [
-    { path : 'users', component : UserListComponent },
-    { path: 'auth', component: AuthenticationComponent }
+    { path: '', loadChildren: './public/public.module#PublicModule' },
+    { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
 ];
 
 @NgModule({

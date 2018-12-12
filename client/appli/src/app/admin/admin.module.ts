@@ -1,15 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-    MatCardModule,
-    MatCheckboxModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatPaginatorModule,
-    MatTableModule,
-} from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { SwapMaterialModule } from '../swap-material/swap-material.module';
 
+import { AdminRoutingModule } from './admin-routing.module'
 
 import { UserListComponent } from '../users/user-list/user-list.component';
 import { AdminComponent } from './admin.component';
@@ -17,12 +11,8 @@ import { AdminComponent } from './admin.component';
 const modules = [
     CommonModule,
     FormsModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatPaginatorModule,
-    MatTableModule,
+    SwapMaterialModule,
+    AdminRoutingModule
 ];
 
 @NgModule({
@@ -31,7 +21,7 @@ const modules = [
         AdminComponent
     ],
     imports: modules,
-    exports: modules
+    exports: modules,
 })
 
 export class AdminModule { }

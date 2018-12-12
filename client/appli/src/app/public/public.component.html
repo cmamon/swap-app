@@ -1,0 +1,11 @@
+<div>
+    <mat-toolbar color="warn">
+        <mat-toolbar-row #toolbarRow>
+            <a mat-button routerLink="/">Swap</a>
+            <!-- This fills the remaining space of the current row -->
+            <span class="example-fill-remaining-space"></span>
+            <a mat-button routerLink="/auth">Log in</a>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</div>
