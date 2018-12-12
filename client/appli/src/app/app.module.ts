@@ -7,7 +7,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
-import { PublicModule } from './public/public.module';
 
 import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
@@ -15,6 +14,8 @@ import { RegistrationComponent } from './registration/registration.component';
 
 import { AuthenticationService } from './authentication.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HeaderComponent } from './header/header.component';
+import { ResearchModule } from './research/research.module';
 
 @NgModule({
     imports: [
@@ -23,14 +24,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
         FormsModule,
         HttpClientModule,
         AdminModule,
-        PublicModule,
         AppRoutingModule,
+        ResearchModule
     ],
     declarations: [
         AppComponent,
         RegistrationComponent,
         AuthenticationComponent,
         PageNotFoundComponent,
+        HeaderComponent
     ],
     providers: [
         AuthenticationService

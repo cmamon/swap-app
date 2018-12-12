@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminComponent } from './admin/admin.component';
+import { ResearchSectionComponent } from './research/research-section/research-section.component';
 
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
-
-const routes : Routes = [
-    { path: '', loadChildren: './public/public.module#PublicModule' },
-    { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
+const appRoutes: Routes = [
+    { path: '', component: ResearchSectionComponent  },
+    { path: 'admin', component: AdminComponent },
 ];
 
 @NgModule({
-    imports: [ RouterModule.forRoot(routes) ],
+    imports: [ RouterModule.forRoot(appRoutes) ],
     exports: [ RouterModule ],
     providers: []
 })
