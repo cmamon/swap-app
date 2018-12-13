@@ -29,8 +29,6 @@ app.use('/users', userRoutes);
 app.use('/properties', propertyRoutes);
 app.use('/services', serviceRoutes);
 
-
-
 let port = process.env.PORT || 8888;
 
 app.listen(port, () => {

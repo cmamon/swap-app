@@ -37,7 +37,7 @@ const del = (req, res, next) => {
 };
 
 const search = (req, res, next) => {
-    req.db.collection('properties_description').find( { 'keyword': { $in: req.body.research } } ).toArray((err, docs) => {
+    req.db.collection('properties_description').find( { "keyword": { $in: req.body.research } } ).toArray((err, docs) => {
         let propertiesList = [];
         let nbRes = docs.length;
         let nbResChecked = 0;
@@ -45,18 +45,22 @@ const search = (req, res, next) => {
         res.setHeader('Content-type', 'application/json');
 
         for (let doc of docs) {
-            db.collection('properties').find( { 'propId': doc.propId } ).toArray((err, docs) => {
+            req.db.collection('properties').find( { "propId": doc.propId } ).toArray((err, docs) => {
                 let prop = docs[0];
+                let query = {};
 
-                let query = {
-                    "propOrServId" : prop.propId,
-                    "weekNumber" : req.body.date.week,
-                    "dayNumber" : req.body.date.day,
-                    "AMPM" : req.body.date.ampm
-                };
+                if (req.body.date) {
+                    query = {
+                        "propOrServId" : prop.propId,
+                        "weekNumber" : req.body.date.week,
+                        "dayNumber" : req.body.date.day,
+                        "AMPM" : req.body.date.ampm
+                    };
+                }
+
 
                 //if(date pas defaut)
-                db.collection('availabilities').find(query).toArray((err, docs)=> {
+                req.db.collection('availabilities').find(query).toArray((err, docs)=> {
                         if (docs[0]) {
                             propertiesList.push(prop);
                         }
