@@ -9,11 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
 import { PublicModule } from './public/public.module';
 
+import { AuthenticationService } from './authentication/authentication.service';
+
 import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { RegistrationComponent } from './registration/registration.component';
 
-import { AuthenticationService } from './authentication.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
@@ -24,18 +25,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
         HttpClientModule,
         AdminModule,
         PublicModule,
-        AppRoutingModule,
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,
-        RegistrationComponent,
         AuthenticationComponent,
-        PageNotFoundComponent,
+        RegistrationComponent,
+        PageNotFoundComponent
     ],
-    providers: [
-        AuthenticationService
-    ],
-    bootstrap: [ AppComponent ]
+    bootstrap: [ AppComponent ],
+    providers: [ AuthenticationService ]
 })
 
 export class AppModule { }

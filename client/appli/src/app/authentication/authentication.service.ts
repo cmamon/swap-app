@@ -1,5 +1,3 @@
-
-
 export class AuthenticationService {
 
     verif(login: string, pwd: string) {

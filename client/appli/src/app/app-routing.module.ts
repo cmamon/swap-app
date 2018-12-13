@@ -3,13 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 
-const routes : Routes = [
+const appRoutes : Routes = [
     { path: '', loadChildren: './public/public.module#PublicModule' },
     { path: 'admin', loadChildren: './admin/admin.module#AdminModule' },
 ];
 
 @NgModule({
-    imports: [ RouterModule.forRoot(routes) ],
+    imports: [ RouterModule.forRoot(appRoutes) ],
     exports: [ RouterModule ],
     providers: []
 })

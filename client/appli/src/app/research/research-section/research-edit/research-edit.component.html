@@ -1,0 +1,15 @@
+<form (submit)="onSubmit(researchForm)" #researchForm="ngForm">
+  <mat-form-field appearance="outline">
+      <mat-label>Find what you need !</mat-label>
+      <input
+          matInput
+          type="text"
+          id="research"
+          name="research"
+          ngModel
+          placeholder="Research"
+          />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Find</button>
+</form>

@@ -4,3 +4,8 @@ form {
     width: 60%;
     margin: 20px auto;
 }
+ button{
+     width: 30%;
+     min-width: 200px;
+     margin: auto;
+ }
