@@ -1,14 +1,20 @@
+import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
-
-
+@Injectable()
 export class ResearchService {
     properties = [];
     services = [];
 
-    search(research: string) {
-        this.properties.splice(0, this.properties.length);
-        this.properties.push('( A recup dans la BD ) Les résultat de la recherche : ' + research);
-        // Connexion et résultat du serveur normalement
+    constructor(private http: HttpClient) {}
+
+    search(research: string): Observable<any> {
+        const url = 'http://localhost:8888/properties';
+        const observable: Observable<any> = this.http.get(url);
+
+        return observable;
     }
 
     getProperties() {

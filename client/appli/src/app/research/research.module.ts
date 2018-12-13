@@ -3,10 +3,16 @@ import { CommonModule } from '@angular/common';
 import { ResearchEditComponent } from './research-section/research-edit/research-edit.component';
 import { ResearchListComponent } from './research-section/research-list/research-list.component';
 import { ResearchSectionComponent } from './research-section/research-section.component';
-import { MatCardModule, MatButtonModule, MatInputModule } from '@angular/material';
+import {
+  MatCardModule,
+  MatButtonModule,
+  MatInputModule,
+  MatRadioModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { ResearchService } from './research.service';
 import { ResearchItemComponent } from './research-section/research-list/research-item/research-item.component';
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +26,8 @@ import { ResearchItemComponent } from './research-section/research-list/research
     MatCardModule,
     FormsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatRadioModule
   ],
   providers: [
     ResearchService
