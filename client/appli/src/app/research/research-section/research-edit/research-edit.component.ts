@@ -15,7 +15,9 @@ export class ResearchEditComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.researchService.search(form.value.research);
+    // Structurer
+    // if service else property
+    this.researchService.searchProperties({research: [form.value.research]});
   }
 
 }
