@@ -58,7 +58,6 @@ const search = (req, res, next) => {
                     };
                 }
 
-
                 //if(date pas defaut)
                 req.db.collection('availabilities').find(query).toArray((err, docs)=> {
                         if (docs[0]) {

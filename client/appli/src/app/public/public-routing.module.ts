@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AuthenticationComponent } from '../authentication/authentication.component';
 import { PublicComponent } from './public.component';
+import { RegistrationComponent } from '../registration/registration.component';
 import { ResearchSectionComponent } from '../research/research-section/research-section.component';
 
 const routes : Routes = [
@@ -11,6 +12,7 @@ const routes : Routes = [
         component: PublicComponent,
         children: [
             { path: 'auth', component: AuthenticationComponent },
+            { path: 'sign-up', component: RegistrationComponent },
             { path: 'search', component: ResearchSectionComponent },
         ]
     }
