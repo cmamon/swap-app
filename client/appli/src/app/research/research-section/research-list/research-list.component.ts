@@ -13,7 +13,7 @@ export class ResearchListComponent implements OnInit {
   constructor(private researchService: ResearchService) { }
 
   ngOnInit() {
-    this.researchService.search('').subscribe(res => this.properties = res);
+    this.researchService.searchProperties({research: ['outil']}).subscribe(res => this.properties = res);
   }
 
 }
