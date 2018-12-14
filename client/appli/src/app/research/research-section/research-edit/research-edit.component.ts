@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./research-edit.component.css']
 })
 export class ResearchEditComponent implements OnInit {
+  selectedRadio = '1';
 
   constructor(private researchService: ResearchService) { }
 
@@ -15,9 +16,12 @@ export class ResearchEditComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    // Structurer
-    // if service else property
-    this.researchService.searchProperties({research: [form.value.research]});
+    console.log(form.value);
+    if (form.value.radioControl === '1') {
+      this.researchService.searchProperties({research: [form.value.research]});
+    } else {
+      this.researchService.searchServices({research: [form.value.research]});
+    }
   }
 
 }

@@ -1,21 +1,25 @@
-<form (submit)="onSubmit(researchForm)" #researchForm="ngForm">
-  <mat-form-field appearance="outline">
-      <mat-label>Find what you need !</mat-label>
-      <input
-          matInput
-          type="text"
-          id="research"
-          name="research"
-          ngModel
-          placeholder="Research"
-          />
-  </mat-form-field>
 
-  <mat-radio-group>
-    <mat-radio-button value="1" checked>Property</mat-radio-button>
-    <br> 
-    <mat-radio-button value="2">Service</mat-radio-button>
-  </mat-radio-group>
+<mat-card>
+  <mat-card-title> Research </mat-card-title>
+  <form (submit)="onSubmit(researchForm)" #researchForm="ngForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Find what you need !</mat-label>
+        <input
+            matInput
+            type="text"
+            id="research"
+            name="research"
+            ngModel
+            placeholder="Research"
+            />
+    </mat-form-field>
 
-  <button mat-raised-button color="primary" type="submit">Find</button>
-</form>
+    <mat-radio-group required name="radio" [ngModel]="selectedRadio">
+      <mat-radio-button value="1"> Property </mat-radio-button>
+      <br> 
+      <mat-radio-button value="2"> Service </mat-radio-button>
+    </mat-radio-group>
+
+    <button mat-raised-button color="primary" type="submit">Find</button>
+  </form>
+</mat-card>

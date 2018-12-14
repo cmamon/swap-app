@@ -9,28 +9,28 @@
 	{
 		"propId" : "prop_2",
 		"title" : "voiture",
-		"descriptif" : "Je mets a disposition ma voiture",
+		"description" : "Je mets a disposition ma voiture",
 		"pictureLink" : "lien2",
 		"price" : 4000
 	},
 	{
 		"propId" : "prop_3",
 		"title" : "tondeuse",
-		"descriptif" : "Je peux vous preter ma tondeuse",
+		"description" : "Je peux vous preter ma tondeuse",
 		"pictureLink" : "lien3",
 		"price" : 150
 	},
 	{
 		"propId" : "prop_4",
 		"title" : "ski",
-		"descriptif" : "Je ne partirai pas en vacances donc je peux preter mes skis",
+		"description" : "Je ne partirai pas en vacances donc je peux preter mes skis",
 		"pictureLink" : "lien4",
 		"price" : 200
 	},
 	{
 		"propId" : "prop_5",
 		"title" : "clé anglaise",
-		"descriptif" : "Si besoin",
+		"description" : "Si besoin",
 		"pictureLink" : "lien5",
 		"price" : 12
 	}

@@ -11,11 +11,22 @@ export class ResearchService {
     constructor(private http: HttpClient) {}
 
     searchProperties(data) {
+        this.services.splice(0, this.services.length);
+        this.properties.splice(0, this.properties.length);
         const url = 'http://localhost:8888/properties/search';
         const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
         this.http.post(url, data, httpOptions).subscribe((res: []) => {
-            this.properties.splice(0, this.properties.length);
             this.properties.push(...res);
+        });
+    }
+
+    searchServices(data) {
+        this.services.splice(0, this.services.length);
+        this.properties.splice(0, this.properties.length);
+        const url = 'http://localhost:8888/properties/search';
+        const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+        this.http.post(url, data, httpOptions).subscribe((res: []) => {
+            this.services.push(...res);
         });
     }
 
