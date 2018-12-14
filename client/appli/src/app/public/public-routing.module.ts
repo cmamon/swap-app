@@ -6,6 +6,8 @@ import { PublicComponent } from './public.component';
 import { RegistrationComponent } from '../registration/registration.component';
 import { ResearchSectionComponent } from '../research/research-section/research-section.component';
 
+import { AuthenticationGuardService } from '../authentication/authentication-guard.service';
+
 const routes : Routes = [
     {
         path: '',
@@ -13,7 +15,11 @@ const routes : Routes = [
         children: [
             { path: 'auth', component: AuthenticationComponent },
             { path: 'sign-up', component: RegistrationComponent },
-            { path: 'search', component: ResearchSectionComponent },
+            {
+                path: 'search',
+                component: ResearchSectionComponent,
+                canActivate: [ AuthenticationGuardService ]
+            }
         ]
     }
 ];

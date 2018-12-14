@@ -9,19 +9,20 @@ import { AuthenticationService } from './authentication.service';
 })
 
 export class AuthenticationComponent {
-
-    public isLoggedIn = false;
-
-    constructor(private service: AuthenticationService) {}
+    constructor(private auth: AuthenticationService) {}
 
     onSubmit(form: NgForm) {
         if (form.invalid) {
-          return;
+            return;
         }
-        this.isLoggedIn = this.service.verif(form.value.login, form.value.pwd);
+        if (this.auth.check(form.value.login, form.value.pwd)) {
+            this.auth.isLoggedIn = true;
+        } else {
+            this.auth.isLoggedIn = false;
+        }
     }
 
     logout() {
-        this.isLoggedIn = false;
+        this.auth.isLoggedIn = false;
     }
 }

@@ -1,11 +1,12 @@
 form {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 50%;
     margin: 20px auto;
 }
- button{
-     width: 30%;
-     min-width: 200px;
-     margin: auto;
- }
+
+button {
+    width: 30%;
+    min-width: 200px;
+    margin: auto;
+}

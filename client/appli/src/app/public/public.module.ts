@@ -8,6 +8,8 @@ import { ResearchModule } from '../research/research.module';
 import { PublicComponent } from './public.component';
 import { HeaderComponent } from '../header/header.component';
 
+import { AuthenticationGuardService } from '../authentication/authentication-guard.service';
+
 const modules = [
     CommonModule,
     PublicRoutingModule,
@@ -21,7 +23,8 @@ const modules = [
         PublicComponent
     ],
     imports: modules,
-    exports: modules
+    exports: modules,
+    providers : [ AuthenticationGuardService ]
 })
 
 export class PublicModule { }
