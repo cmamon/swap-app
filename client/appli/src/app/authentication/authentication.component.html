@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-title> Please log in </mat-card-title>
 
-    <form *ngIf="!auth.isLoggedIn" (submit)="onSubmit(loginForm)" #loginForm="ngForm">
+    <form method="post" (submit)="onSubmit()" #loginForm="ngForm">
         <mat-form-field>
             <input
                 matInput
@@ -28,8 +28,10 @@
             <mat-error *ngIf="pwd.invalid">Please enter a Password.</mat-error>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button mat-raised-button color="primary" type="submit">Login</button>
     </form>
+
+    <p> You don't own an account ? You have to <a [routerLink]="['/sign-up']" class="btn btn-link">register</a> first.</p>
 </mat-card>
 <div *ngIf="auth.isLoggedIn">
     {{login}}

@@ -10,3 +10,7 @@ button {
     min-width: 200px;
     margin: auto;
 }
+
+p {
+    text-align: center;
+}

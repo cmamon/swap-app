@@ -21,7 +21,8 @@ const routes : Routes = [
                 canActivate: [ AuthenticationGuardService ]
             }
         ]
-    }
+    },
+    { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

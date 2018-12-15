@@ -15,8 +15,6 @@ import { AppComponent } from './app.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { RegistrationComponent } from './registration/registration.component';
 
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
 @NgModule({
     imports: [
         BrowserAnimationsModule,
@@ -30,8 +28,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     declarations: [
         AppComponent,
         AuthenticationComponent,
-        RegistrationComponent,
-        PageNotFoundComponent
+        RegistrationComponent
     ],
     bootstrap: [ AppComponent ],
     providers: [ AuthenticationService ]

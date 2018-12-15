@@ -40,17 +40,19 @@ const login = (req, res, next) => {
             return next(err);
         }
 
-        if (docs[0]) {
+        let user = docs[0];
+        if (user) {
             // Comparaison du mot de passe saisi et du hash
-            bcrypt.compare(req.body.password, docs[0].password, function(err, match) {
+            bcrypt.compare(req.body.password, user.password, function(err, match) {
                 if (match) {
+                    return user;
                     res.send('User logged in successfully\n');
                 } else {
-                    res.status(403).send();
+                    res.status(403).send('Error');
                 }
             });
         } else {
-            res.status(403).send();
+            res.status(403).send('Error');
         }
 
     });

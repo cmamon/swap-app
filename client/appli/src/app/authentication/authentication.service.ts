@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AuthenticationService {
@@ -8,10 +9,19 @@ export class AuthenticationService {
 
     constructor(private http: HttpClient) {}
 
-    check(login: string, pwd: string): boolean {
+    check(login: string, password: string) {
+        const httpOptions = {
+            headers: new HttpHeaders({ 'Content-Type':  'application/json' })
+        };
 
-        // Verification
-        console.log(login, pwd);
-        return true;
+        let url = 'http://localhost:8888/users/login';
+        let formData = { login, password };
+        // let valid = false;
+
+        return this.http.post(url, formData, httpOptions).pipe(map(user => {
+            return user;
+        }));
+
+        // return valid;
     }
 }
