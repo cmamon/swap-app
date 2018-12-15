@@ -1,6 +1,8 @@
 const bodyParser = require('body-parser');
-const express = require('express');
 const cors = require('cors');
+const express = require('express');
+const fs = require('fs');
+const https = require('https');
 
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://localhost:27017/SWAP';
