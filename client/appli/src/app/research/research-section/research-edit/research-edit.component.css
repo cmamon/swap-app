@@ -19,3 +19,14 @@ button{
     min-width: 200px;
     margin: auto;
 }
+
+#date{
+    width: 30%;
+    min-width: 200px;
+}
+
+#options{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
