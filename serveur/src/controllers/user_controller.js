@@ -1,6 +1,7 @@
 const User = require('../models/user_model');
 const bcrypt = require('bcrypt');
-const BCRYPT_SALT_ROUNDS = 12;
+const BCRYPT_SALT_ROUNDS = 10;
+const jwt = require("jsonwebtoken");
 
 const list = (req, res) => {
     req.db.collection('users').find({}).toArray((err, docs) => {
@@ -15,14 +16,14 @@ const list = (req, res) => {
 const register = (req, res, next) => {
     // Cryptage du mot de passe avant insertion dans la base de données
     bcrypt.hash(req.body.password, BCRYPT_SALT_ROUNDS, (err, hashedPassword) => {
-        let user = new User(
+        const user = new User(
             req.body.email,
             hashedPassword,
-            req.body.firstName,
-            req.body.lastName,
-            req.body.city,
-            req.body.address,
-            req.body.phone
+            'TEST',
+            'TEST',
+            'CITY',
+            'ADRESS',
+            'PHONE'
         );
 
         req.db.collection('users').insertOne(user, (err) => {
@@ -35,24 +36,34 @@ const register = (req, res, next) => {
 };
 
 const login = (req, res, next) => {
+    // On cherche si l'utilisateur existe avant tout
     req.db.collection('users').find({ email : req.body.email }).toArray((err, docs) => {
         if (err) {
             return next(err);
         }
 
         let user = docs[0];
+        // Si l'utilisateur (l'email) existe 
         if (user) {
             // Comparaison du mot de passe saisi et du hash
             bcrypt.compare(req.body.password, user.password, function(err, match) {
                 if (match) {
-                    return user;
-                    res.send('User logged in successfully\n');
+                    const token = jwt.sign(
+                        {email: user.email, userId: user._id}, 
+                        'notre_cle_de_cryptage', 
+                        {expiresIn: '1h'}
+                    );
+                    //return token;
+                    //res.status(200).send('User logged in successfully\n');
+                    res.status(200).json({
+                        token: token
+                    });
                 } else {
-                    res.status(403).send('Error');
+                    res.status(401).send('Error');
                 }
             });
         } else {
-            res.status(403).send('Error');
+            res.status(401).send('Error');
         }
 
     });

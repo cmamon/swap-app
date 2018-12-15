@@ -1,5 +1,5 @@
 
-<mat-card id="results">
+<mat-card id="results" *ngIf="userIsAuthenticated">
     <mat-card-title> Results </mat-card-title>
     <app-research-item *ngFor="let resultP of properties" [resultat]="resultP"></app-research-item>
     <app-research-item *ngFor="let resultS of services" [resultat]="resultS"></app-research-item>
