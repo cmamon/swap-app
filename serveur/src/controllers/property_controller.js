@@ -47,7 +47,7 @@ const search = (req, res, next) => {
         for (let doc of docs) {
             req.db.collection('properties').find( { "propId": doc.propId } ).toArray((err, docs) => {
                 let prop = docs[0];
-                let query = {};
+		let query = {};
 
                 if (req.body.date) {
                     query = {

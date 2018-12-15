@@ -9,7 +9,8 @@ import {
     MatPaginatorModule,
     MatTableModule,
     MatToolbarModule,
-    MatIconModule } from '@angular/material';
+    MatIconModule,
+    MatDatepickerModule} from '@angular/material';
 
 const MATERIAL_MODULES = [
     CommonModule,
@@ -21,7 +22,8 @@ const MATERIAL_MODULES = [
     MatPaginatorModule,
     MatTableModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule
 ];
 
 @NgModule({

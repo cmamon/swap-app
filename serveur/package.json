@@ -19,7 +19,8 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "http": "0.0.0",
-    "mongodb": "^3.1.9"
+    "mongodb": "^3.1.9",
+    "node-gyp": "^3.8.0"
   },
   "devDependencies": {}
 }

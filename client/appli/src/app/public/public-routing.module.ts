@@ -8,7 +8,7 @@ import { ResearchSectionComponent } from '../research/research-section/research-
 
 import { AuthenticationGuardService } from '../authentication/authentication-guard.service';
 
-const routes : Routes = [
+const routes: Routes = [
     {
         path: '',
         component: PublicComponent,
@@ -17,8 +17,8 @@ const routes : Routes = [
             { path: 'sign-up', component: RegistrationComponent },
             {
                 path: 'search',
-                component: ResearchSectionComponent,
-                canActivate: [ AuthenticationGuardService ]
+                component: ResearchSectionComponent
+                // scanActivate: [ AuthenticationGuardService ]
             }
         ]
     },

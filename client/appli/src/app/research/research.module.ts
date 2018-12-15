@@ -7,7 +7,9 @@ import {
   MatCardModule,
   MatButtonModule,
   MatInputModule,
-  MatRadioModule} from '@angular/material';
+  MatRadioModule,
+  MatDatepickerModule,
+  MatNativeDateModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { ResearchService } from './research.service';
 import { ResearchItemComponent } from './research-section/research-list/research-item/research-item.component';
@@ -27,7 +29,9 @@ import { ResearchItemComponent } from './research-section/research-list/research
     FormsModule,
     MatButtonModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     ResearchService

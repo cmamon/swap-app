@@ -45,20 +45,23 @@ const search = (req, res, next) => {
         res.setHeader('Content-type', 'application/json');
 
         for (let doc of docs) {
-            db.collection('services').find( { 'servId': doc.servId } ).toArray((err, docs) => {
+            req.db.collection('services').find( { 'servId': doc.servId } ).toArray((err, docs) => {
                 let serv = docs[0];
+		let query = {};
 
-                let query = {
-                    "propOrServId": serv.servId,
-                    "weekNumber" : req.body.date.week,
-                    "dayNumber" : req.body.date.day,
-                    "AMPM" : req.body.date.ampm
-                };
+		if (req.body.date) {
+                	query = {
+                    	"propOrServId": serv.servId,
+                    	"weekNumber" : req.body.date.week,
+                    	"dayNumber" : req.body.date.day,
+                    	"AMPM" : req.body.date.ampm
+                	};
+		}
 
                 //if(date pas defaut)
-                db.collection('availabilities').find(query).toArray((err, docs)=> {
+                req.db.collection('availabilities').find(query).toArray((err, docs)=> {
                     if (docs[0]) {
-                        servicesList.push(prop);
+                        servicesList.push(serv);
                     }
 
                     nbResChecked++;
@@ -69,7 +72,7 @@ const search = (req, res, next) => {
 
                 /*
                 else{
-                    propertiesList.push(prop);
+                    servicesList.push(serv);
                 }
                 */
             });

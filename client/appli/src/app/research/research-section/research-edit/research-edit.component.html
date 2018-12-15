@@ -10,15 +10,29 @@
             id="research"
             name="research"
             ngModel
-            placeholder="Research"
+            placeholder="Keyword1, Keyword2, Keyword3..."
             />
     </mat-form-field>
 
-    <mat-radio-group required name="radio" [ngModel]="selectedRadio">
-      <mat-radio-button value="1"> Property </mat-radio-button>
-      <br> 
-      <mat-radio-button value="2"> Service </mat-radio-button>
-    </mat-radio-group>
+    <div id="options">
+      <mat-radio-group required name="radio" [ngModel]="selectedRadio">
+        <mat-radio-button value="1"> Property </mat-radio-button>
+        <br> 
+        <mat-radio-button value="2"> Service </mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field id="date">
+        <input 
+          matInput 
+          [min]="today"
+          [matDatepicker]="picker" 
+          name="dateChoice"
+          ngModel
+          placeholder="Choose a date (optionnal)">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
 
     <button mat-raised-button color="primary" type="submit">Find</button>
   </form>

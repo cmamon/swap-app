@@ -1,1 +1,1 @@
-curl -H "Content-type: application/json" -X POST -d '{"email" : "admin@swap.com", "password" : "admin", "firstName" : "", "lastName" : "", "city" : "Montpellier", "address" : "Inconnue", "phone" :  ""}' localhost:8888/users/
+curl -H "Content-type: application/json" -X POST -d '{"research": ["outil"]}' localhost:8888/properties/search
