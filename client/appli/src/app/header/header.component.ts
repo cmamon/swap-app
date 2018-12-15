@@ -10,14 +10,14 @@ import { Subscription } from 'rxjs';
 
 export class HeaderComponent implements OnInit, OnDestroy {
 
-    userIsAuthenticated = false;
-    private authListenerSubs: Subscription;
+    userIsAuthenticated = false; // Non connecté par défaut
+    private authListenerSubs: Subscription; // Pour écouter un changement connecté/déconnecté
 
     constructor(private authService: AuthService) { }
 
     ngOnInit() {
-        this.userIsAuthenticated = this.authService.getIsAuth();
-        this.authListenerSubs = this.authService
+        this.userIsAuthenticated = this.authService.getIsAuth(); // connecté ou pas ?
+        this.authListenerSubs = this.authService // On se met en écoute d'un changement
             .getAuthStatusListener()
             .subscribe(isAuthenticated => {
                 this.userIsAuthenticated = isAuthenticated;
@@ -25,9 +25,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.authListenerSubs.unsubscribe();
+        this.authListenerSubs.unsubscribe(); // On se désabonne
     }
 
+    // Lors du clic sur Logout on appelle la méthode logout de notre service
     onLogout() {
         this.authService.logout();
     }

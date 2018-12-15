@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [
-    { path: '', loadChildren: './public/public.module#PublicModule' },
-    { path: 'admin', loadChildren: './admin/admin.module#AdminModule', canActivate: [AuthGuard] }
+    { path: '', loadChildren: './public/public.module#PublicModule'},
+    { path: 'admin', loadChildren: './admin/admin.module#AdminModule'}
 ];
 
 @NgModule({

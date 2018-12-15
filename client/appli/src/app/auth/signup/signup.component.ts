@@ -12,11 +12,10 @@ export class SignupComponent {
     constructor(private authService: AuthService) {}
 
     onSignup(form: NgForm) {
-        // Si le formulaire n'est pas valide lors du clic sur le bouton
-        // il ne faut surtout pas continuer
         if (form.invalid) {
             return;
         }
+        // Si le formulaire est valide, on utilise le service pour envoyer une inscription
         this.authService.createUser(form.value.email, form.value.pwd);
     }
 }

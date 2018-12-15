@@ -10,7 +10,6 @@ import { AdminModule } from './admin/admin.module';
 import { PublicModule } from './public/public.module';
 
 import { AppComponent } from './app.component';
-import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
@@ -27,7 +26,6 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     ],
     declarations: [
         AppComponent,
-        RegistrationComponent,
         LoginComponent,
         SignupComponent
     ],
