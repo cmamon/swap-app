@@ -1,5 +1,14 @@
 [
 	{
+		"email" : "admin@swap.fr",
+		"password" : "$2b$10$OHgU4NFyD05crtAjBrhPSOWT/K/jnp5cn.AnP0/lsJzGokWHCs4F2",
+		"firstName" : "",
+		"lastName" : "",
+		"city" : "",
+		"address" : "",
+		"phone" :  ""
+	},
+	{
 		"email" : "pompidor@lirmm.fr",
 		"password" : "azerty",
 		"firstName" : "Pierre",
