@@ -8,6 +8,7 @@
   flex: 1 1 auto;
 }
 
-body{
-  background-color: #99AAB5;
+body {
+    margin : 0;
+    background-color: #EAEEF0;
 }
