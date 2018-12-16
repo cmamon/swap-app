@@ -14,25 +14,38 @@ const list = (req, res) => {
 };
 
 const register = (req, res, next) => {
-    // Cryptage du mot de passe avant insertion dans la base de données
-    bcrypt.hash(req.body.password, BCRYPT_SALT_ROUNDS, (err, hashedPassword) => {
-        const user = new User(
-            req.body.email,
-            hashedPassword,
-            'TEST',
-            'TEST',
-            'CITY',
-            'ADRESS',
-            'PHONE'
-        );
+    req.db.collection('users').find({ email : req.body.email }).toArray((err, users) => {
 
-        req.db.collection('users').insertOne(user, (err) => {
-            if (err) {
-                return next(err);
-            }
-            res.send('User created successfully\n');
-        });
+        if (users[0] === undefined) { // Aucun utilisateur n'utilise cet email
+            /* Cryptage du mot de passe avant insertion dans la base de données */
+            bcrypt.hash(req.body.password, BCRYPT_SALT_ROUNDS, (err, hashedPassword) => {
+                const user = new User(
+                    req.body.email,
+                    hashedPassword,
+                    req.body.firstName,
+                    req.body.lastName,
+                    req.body.phone,
+                    req.body.city,
+                    req.body.address,
+                );
+
+                req.db.collection('users').insertOne(user, (err) => {
+                    if (err) {
+                        return next(err);
+                    }
+                    const token = jwt.sign(
+                        { user },
+                        'notre_cle_de_cryptage',
+                        { expiresIn: '1h' }
+                    );
+                    res.status(200).json({ token: token });
+                });
+            });
+        } else {
+            res.status(401).send('User already exists');
+        }
     });
+
 };
 
 const login = (req, res, next) => {
@@ -43,18 +56,16 @@ const login = (req, res, next) => {
         }
 
         let user = docs[0];
-        // Si l'utilisateur (l'email) existe 
+        // Si l'utilisateur (l'email) existe
         if (user) {
             // Comparaison du mot de passe saisi et du hash
             bcrypt.compare(req.body.password, user.password, function(err, match) {
                 if (match) {
                     const token = jwt.sign(
-                        {email: user.email, userId: user._id}, 
-                        'notre_cle_de_cryptage', 
+                        { email: user.email, userId: user._id },
+                        'notre_cle_de_cryptage',
                         {expiresIn: '1h'}
                     );
-                    //return token;
-                    //res.status(200).send('User logged in successfully\n');
                     res.status(200).json({
                         token: token
                     });

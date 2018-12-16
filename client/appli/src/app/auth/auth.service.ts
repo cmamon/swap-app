@@ -12,26 +12,12 @@ export class AuthService {
     // Injection de dependances = service doit être @Injectable
     constructor(private http: HttpClient, private router: Router) {}
 
-    // Envoi une requete au serveur pour inscrire un nouveau membre
-    createUser(email: string, password: string) {
-        const url = 'http://localhost:8888/users/signup';
-        const data = {
-            email: email,
-            password: password
-        };
+    postToServer(url, data) {
         const httpOptions = {
             headers: new HttpHeaders({'Content-Type': 'application/json'})
         };
 
-        this.http.post(url, data, httpOptions).subscribe();
-    }
-
-    // Envoi une requête pour se connecter
-    login(email: string, password: string) {
-        const url = 'http://localhost:8888/users/login';
-        const data = {email: email, password: password};
-        const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
-        this.http.post<{token: string}>(url, data, httpOptions).subscribe( res => {
+        this.http.post<{ token: string }>(url, data, httpOptions).subscribe( res => {
             console.log(res);
             this.token = res.token;
             // Si le serveur nous renvoie un token, c'est que la connexion est accepté
@@ -43,6 +29,19 @@ export class AuthService {
                 this.router.navigate(['/']); // On redirige l'user sur la page d'accueil
             }
         });
+    }
+
+    // Envoi une requete au serveur pour inscrire un nouveau membre
+    createUser(newUser) {
+        const url = 'http://localhost:8888/users/signup';
+        this.postToServer(url, newUser);
+    }
+
+    // Envoi une requête pour se connecter
+    login(email: string, password: string) {
+        const url = 'http://localhost:8888/users/login';
+        const data = { email: email, password: password };
+        this.postToServer(url, data);
     }
 
     getToken() {

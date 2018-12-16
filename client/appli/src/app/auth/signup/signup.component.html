@@ -1,92 +1,99 @@
 <mat-card>
-    <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
-        <mat-form-field>
-            <input 
-                matInput 
-                name="email" 
-                ngModel 
-                type="email" 
-                placeholder="Email" 
-                #emailInput="ngModel" 
-                required 
-                email>
-            <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <input 
-                type="password" 
-                name="pwd" 
-                ngModel 
-                matInput 
-                placeholder="Password" 
-                #pwd="ngModel" 
-                required>
-            <mat-error *ngIf="pwd.invalid">Please enter a valid password</mat-error>
-        </mat-form-field>
-        <button 
-            mat-raised-button 
-            color="accent" 
-            type="submit">Sign Up</button>
-    </form>
-</mat-card>
-
-<!-- 
-
-    ANCIEN FORMULAIRE
-
-
-    <mat-card>
     <mat-card-title> Sign up to join the community ! </mat-card-title>
-
     <div class="form">
         <p>This will only take a few seconds</p>
-        <form class="" action="index.html" method="post">
-            <p>
-                <mat-form-field >
-                    <mat-label>Email</mat-label>
-                    <input matInput type="email" required placeholder="ex: john.doe@gmail.com">
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field >
-                    <mat-label>Password</mat-label>
-                    <input matInput type="password" required placeholder="Something sercure">
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field >
-                    <mat-label>Firstname</mat-label>
-                    <input matInput required placeholder="ex: John">
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field >
-                    <mat-label>Lastname</mat-label>
-                    <input matInput required placeholder="ex: Doe">
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field >
-                    <mat-label>Phone</mat-label>
-                    <input matInput required placeholder="ex: 06060606">
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field >
-                    <mat-label>City</mat-label>
-                    <input matInput required placeholder="ex: Hollywood">
-                </mat-form-field>
-            </p>
-            <p>
-                <mat-form-field >
-                    <mat-label>Address</mat-label>
-                    <input matInput required placeholder="ex: 4309 Hollywood Blvd">
-                </mat-form-field>
-            </p>
-
-            <button mat-raised-button color="primary" type="submit">Submit</button>
+        <form (submit)="onSignup(signupForm)" #signupForm="ngForm">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input
+                    matInput
+                    name="email"
+                    ngModel
+                    type="email"
+                    placeholder="ex: john.doe@gmail.com"
+                    #emailInput="ngModel"
+                    required
+                    email>
+                <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input
+                    type="password"
+                    name="pwd"
+                    ngModel
+                    matInput
+                    placeholder="Something secure"
+                    #pwd="ngModel"
+                    required>
+                <mat-error *ngIf="pwd.invalid">Please enter a valid password</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Firstname</mat-label>
+                <input
+                    type="text"
+                    name="firstName"
+                    ngModel
+                    matInput
+                    placeholder="ex: John"
+                    #firstname="ngModel"
+                    required>
+                <mat-error *ngIf="firstname.invalid">This field is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Lastname</mat-label>
+                <input
+                    type="text"
+                    name="lastName"
+                    ngModel
+                    matInput
+                    placeholder="ex: Doe"
+                    #lastname="ngModel"
+                    required>
+                <mat-error *ngIf="lastname.invalid">This field is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Phone</mat-label>
+                <input
+                    type="text"
+                    name="phone"
+                    ngModel
+                    matInput
+                    placeholder="ex: 06060606"
+                    #phone="ngModel"
+                    required>
+                <mat-error *ngIf="phone.invalid">This field is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>City</mat-label>
+                <input
+                    type="text"
+                    name="city"
+                    ngModel
+                    matInput
+                    placeholder="ex: Hollywood"
+                    #city="ngModel"
+                    required>
+                <mat-error *ngIf="city.invalid">This field is required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input
+                    type="text"
+                    name="address"
+                    ngModel
+                    matInput
+                    placeholder="ex: 4309 Hollywood Blvd"
+                    #address="ngModel"
+                    required>
+                <mat-error *ngIf="address.invalid">This field is required</mat-error>
+            </mat-form-field>
+            <br>
+            <br>
+            <button
+                mat-raised-button
+                color="accent"
+                type="submit">Sign Up</button>
         </form>
     </div>
 </mat-card>
-
--->

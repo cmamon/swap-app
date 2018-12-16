@@ -16,6 +16,15 @@ export class SignupComponent {
             return;
         }
         // Si le formulaire est valide, on utilise le service pour envoyer une inscription
-        this.authService.createUser(form.value.email, form.value.pwd);
+        const newUser = {
+            email: form.value.email,
+            password: form.value.pwd,
+            firstName: form.value.firstName,
+            lastName: form.value.lastName,
+            phone: form.value.phone,
+            city: form.value.city,
+            address: form.value.address
+        };
+        this.authService.createUser(newUser);
     }
 }
