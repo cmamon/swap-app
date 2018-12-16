@@ -7,16 +7,20 @@
         <a mat-button routerLink="/search"> <mat-icon>search</mat-icon> Research</a>
 
         <!-- Si l'utilisateur est déconnecté -->
-        <a 
-            *ngIf="!userIsAuthenticated" 
-            mat-button 
+        <a
+            *ngIf="!userIsAuthenticated"
+            mat-button
             routerLink="/login"> <mat-icon>account_circle</mat-icon> Login </a>
-        <a 
-            *ngIf="!userIsAuthenticated" 
-            mat-button 
+        <a
+            *ngIf="!userIsAuthenticated"
+            mat-button
             routerLink="/signup"> <mat-icon>account_circle</mat-icon> Sign Up </a>
 
         <!-- Si l'utilisateur est connecté -->
+        <a
+            *ngIf="userIsAuthenticated"
+            mat-button
+            routerLink="/account"> <mat-icon>account_circle</mat-icon> My account </a>
         <button *ngIf="userIsAuthenticated" mat-button (click) = "onLogout()"> Logout </button>
     </mat-toolbar-row>
 </mat-toolbar>

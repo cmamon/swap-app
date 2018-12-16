@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-title>My personal informations</mat-card-title>
+
+    <mat-list>
+        <mat-list-item *ngFor="let field of user | keyvalue">
+            {{field.key}}: {{field.value}}
+            <!-- <p mat-line> {{folder.updated | date}} </p> -->
+        </mat-list-item>
+    </mat-list>
+
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>My transactions</mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</mat-card>

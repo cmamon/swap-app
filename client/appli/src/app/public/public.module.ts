@@ -7,7 +7,7 @@ import { ResearchModule } from '../research/research.module';
 
 import { PublicComponent } from './public.component';
 import { HeaderComponent } from '../header/header.component';
-
+import { UserPanelComponent } from '../users/user-panel/user-panel.component';
 
 const modules = [
     CommonModule,
@@ -19,7 +19,8 @@ const modules = [
 @NgModule({
     declarations: [
         HeaderComponent,
-        PublicComponent
+        PublicComponent,
+        UserPanelComponent
     ],
     imports: modules,
     exports: modules,

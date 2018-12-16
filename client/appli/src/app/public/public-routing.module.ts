@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { LoginComponent } from '../auth/login/login.component';
 import { PublicComponent } from './public.component';
 import { ResearchSectionComponent } from '../research/research-section/research-section.component';
-import { LoginComponent } from '../auth/login/login.component';
 import { SignupComponent } from '../auth/signup/signup.component';
-
+import { UserPanelComponent } from '../users/user-panel/user-panel.component';
 
 const routes: Routes = [
     {
@@ -17,6 +17,7 @@ const routes: Routes = [
                 component: ResearchSectionComponent
             },
             { path: 'login', component: LoginComponent},
+            { path: 'account', component: UserPanelComponent},
             { path: 'signup', component: SignupComponent}
         ]
     }

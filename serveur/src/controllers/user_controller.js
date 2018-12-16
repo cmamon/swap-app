@@ -2,6 +2,7 @@ const User = require('../models/user_model');
 const bcrypt = require('bcrypt');
 const BCRYPT_SALT_ROUNDS = 10;
 const jwt = require("jsonwebtoken");
+const fs = require('fs');
 
 const list = (req, res) => {
     req.db.collection('users').find({}).toArray((err, docs) => {
@@ -10,6 +11,16 @@ const list = (req, res) => {
         }
         res.setHeader('Content-type', 'application/json');
         res.end(JSON.stringify(docs));
+    });
+};
+
+const getUserByEmail = (req, res) => {
+    req.db.collection('users').findOne({ email: req.params.email }, (err, user) => {
+        if (err) {
+            return next(err);
+        }
+        res.setHeader('Content-type', 'application/json');
+        res.end(JSON.stringify(user));
     });
 };
 
@@ -38,7 +49,9 @@ const register = (req, res, next) => {
                         'notre_cle_de_cryptage',
                         { expiresIn: '1h' }
                     );
-                    res.status(200).json({ token: token });
+                    res.status(200).json({
+                        userData: { data: user, token: token }
+                    });
                 });
             });
         } else {
@@ -67,7 +80,7 @@ const login = (req, res, next) => {
                         {expiresIn: '1h'}
                     );
                     res.status(200).json({
-                        token: token
+                        userData: { data: user, token: token }
                     });
                 } else {
                     res.status(401).send('Error');
@@ -80,4 +93,4 @@ const login = (req, res, next) => {
     });
 };
 
-module.exports = { list, register, login };
+module.exports = { list, register, login, getUserByEmail };
