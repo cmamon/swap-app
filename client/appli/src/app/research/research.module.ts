@@ -9,7 +9,8 @@ import {
   MatInputModule,
   MatRadioModule,
   MatDatepickerModule,
-  MatNativeDateModule} from '@angular/material';
+  MatNativeDateModule,
+  MatExpansionModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { ResearchService } from './research.service';
 import { ResearchItemComponent } from './research-section/research-list/research-item/research-item.component';
@@ -31,7 +32,8 @@ import { ResearchItemComponent } from './research-section/research-list/research
     MatInputModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatExpansionModule
   ],
   providers: [
     ResearchService

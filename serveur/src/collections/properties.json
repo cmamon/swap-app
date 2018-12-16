@@ -3,7 +3,7 @@
 		"propId" : "prop_1",
 		"title" : "marteau",
 		"description" : "Outil de travail",
-		"pictureLink" : "lien1",
+		"pictureLink" : "https://www.jadisetgourmande.fr/jadis_images/produits/outil-lait.jpg",
 		"price" : 10
 	},
 	{
@@ -31,7 +31,7 @@
 		"propId" : "prop_5",
 		"title" : "clé anglaise",
 		"description" : "Si besoin",
-		"pictureLink" : "lien5",
+		"pictureLink" : "https://www.jadisetgourmande.fr/jadis_images/produits/outil-lait.jpg",
 		"price" : 12
 	}
 ]

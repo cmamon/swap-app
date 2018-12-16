@@ -4,53 +4,53 @@
         "email" : "christophe.quenette@etu.umontpellier.fr",
         "propOrServ" : "service",
         "propOrServId" : "serv_1",
-        "weekNumber" : 40,
-        "dayNumber" : 3,
-        "AMPM" : "PM"
+        "day": 2,
+        "month": 11,
+        "year": 2018
     },
     {
         "useId" : "use_2",
         "email" : "julien.rousse@etu.umontpellier.fr",
         "propOrServ" : "property",
         "propOrServId" : "prop_1",
-        "weekNumber" : 12,
-        "dayNumber" : 7,
-        "AMPM" : "AM"
+        "day": 2,
+        "month": 11,
+        "year": 2018
     },
     {
         "useId" : "use_3",
         "email" : "pierre.pompidor@lirmm.fr",
         "propOrServ" : "service",
         "propOrServId" : "serv_1",
-        "weekNumber" : 25,
-        "dayNumber" : 1,
-        "AMPM" : "AM"
+        "day": 2,
+        "month": 11,
+        "year": 2018
     },
     {
         "useId" : "use_4",
         "email" : "christophe.quenette@etu.umontpellier.fr",
         "propOrServ" : "property",
         "propOrServId" : "prop_1",
-        "weekNumber" : 17,
-        "dayNumber" : 4,
-        "AMPM" : "PM"
+        "day": 2,
+        "month": 11,
+        "year": 2018
     },
     {
         "useId" : "use_5",
         "email" : "dorian@do.fr",
         "propOrServ" : "property",
         "propOrServId" : "prop_1",
-        "weekNumber" : 50,
-        "dayNumber" : 3,
-        "AMPM" : "PM"
+        "day": 2,
+        "month": 11,
+        "year": 2018
     },
     {
         "useId" : "use_6",
         "email" : "aurelie.murcia@etu.umontpellier.fr",
         "propOrServ" : "property",
         "propOrServId" : "prop_1",
-        "weekNumber" : 8,
-        "dayNumber" : 5,
-        "AMPM" : "PM"
+        "day": 2,
+        "month": 11,
+        "year": 2018
     }
 ]

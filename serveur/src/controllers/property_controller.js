@@ -47,34 +47,29 @@ const search = (req, res, next) => {
         for (let doc of docs) {
             req.db.collection('properties').find( { "propId": doc.propId } ).toArray((err, docs) => {
                 let prop = docs[0];
-		let query = {};
+                let query = {};
 
-                if (req.body.date) {
+                if (req.body.days) {
                     query = {
                         "propOrServId" : prop.propId,
-                        "weekNumber" : req.body.date.week,
-                        "dayNumber" : req.body.date.day,
-                        "AMPM" : req.body.date.ampm
+                        "days" : {$in : req.body.days}
                     };
+                    console.log(req.body.days);
                 }
+                
+                    req.db.collection('availabilities').find(query).toArray((err, docs)=> {
+                            if (docs[0]) {
+                                propertiesList.push(prop);
+                            }
 
-                //if(date pas defaut)
-                req.db.collection('availabilities').find(query).toArray((err, docs)=> {
-                        if (docs[0]) {
-                            propertiesList.push(prop);
-                        }
+                            nbResChecked++;
+                            if (nbResChecked == nbRes) {
+                                 res.end(JSON.stringify(propertiesList));
+                            }
+                    });
+                
 
-                        nbResChecked++;
-                        if (nbResChecked == nbRes) {
-                             res.end(JSON.stringify(propertiesList));
-                        }
-                });
 
-                /*
-                else{
-                    propertiesList.push(prop);
-                }
-                */
             });
         }
     });

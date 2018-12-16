@@ -18,13 +18,18 @@ export class ResearchEditComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    console.log(form.value);
     const keywords = form.value.research.split(',');
     const keywordsOK = [];
     keywords.forEach(element => {
       keywordsOK.push(element.trim());
     });
+    let days = [0, 1, 2, 3, 4, 5, 6];
+    if (form.value.dateChoice) {
+      days = [form.value.dateChoice.getDay()];
+    }
     if (form.value.radio === '1') {
-      this.researchService.searchProperties({research: keywordsOK});
+      this.researchService.searchProperties({research: keywordsOK, days : days});
     } else {
       this.researchService.searchServices({research: keywordsOK});
     }

@@ -7,7 +7,6 @@ router.get('/', propController.list);
 router.post('/', propController.add);
 router.delete('/', propController.del);
 
-// On verifie si l'utilisateur a un token = connecte pour faire cette requete (=autorisé)
-router.post('/search', checkAuth, propController.search);
+router.post('/search', propController.search);
 
 module.exports = router;

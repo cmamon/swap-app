@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ResearchService } from '../../research.service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Subscription } from 'rxjs';
@@ -8,29 +8,16 @@ import { Subscription } from 'rxjs';
   templateUrl: './research-list.component.html',
   styleUrls: ['./research-list.component.css']
 })
-export class ResearchListComponent implements OnInit, OnDestroy {
+export class ResearchListComponent implements OnInit {
   properties = [];
   services = [];
 
-  userIsAuthenticated = false;
-  private authStatusSub: Subscription;
-
-  constructor(private researchService: ResearchService, private authService: AuthService) { }
+  constructor(private researchService: ResearchService) { }
 
   ngOnInit() {
     this.properties = this.researchService.getProperties();
     this.services = this.researchService.getServices();
-
-    this.userIsAuthenticated = this.authService.getIsAuth();
-    this.authStatusSub = this.authService
-      .getAuthStatusListener()
-      .subscribe(isAuthenticated => {
-        this.userIsAuthenticated = isAuthenticated;
-      });
   }
 
-  ngOnDestroy() {
-    this.authStatusSub.unsubscribe();
-  }
 
 }
