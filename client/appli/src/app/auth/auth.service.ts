@@ -29,7 +29,7 @@ export class AuthService {
 
                 // Stocker dans le stockage local (HTML5 Local Storage) les infos sur
                 // l'utilisateur et le token
-                // localStorage.setItem('currentUser', JSON.stringify(res.userData));
+                localStorage.setItem('currentUser', JSON.stringify(res.userData));
 
                 this.authStatusListener.next(true);
                 this.isAuth = true;
