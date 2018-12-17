@@ -56,20 +56,17 @@ const search = (req, res, next) => {
                     };
                     console.log(req.body.days);
                 }
-                
-                    req.db.collection('availabilities').find(query).toArray((err, docs)=> {
-                            if (docs[0]) {
-                                propertiesList.push(prop);
-                            }
 
-                            nbResChecked++;
-                            if (nbResChecked == nbRes) {
-                                 res.end(JSON.stringify(propertiesList));
-                            }
-                    });
-                
+                req.db.collection('availabilities').find(query).toArray((err, docs)=> {
+                    if (docs[0]) {
+                        propertiesList.push(prop);
+                    }
 
-
+                    nbResChecked++;
+                    if (nbResChecked == nbRes) {
+                         res.end(JSON.stringify(propertiesList));
+                    }
+                });
             });
         }
     });

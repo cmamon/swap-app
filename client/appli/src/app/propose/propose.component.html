@@ -1,0 +1,46 @@
+<mat-card>
+    <mat-card-title>Give the details</mat-card-title>
+    <mat-grid-list cols="1" rowHeight="2:1">
+        <mat-grid-tile>
+            <form (submit)="onSubmit(proposeForm)" #proposeForm="ngForm">
+                <mat-radio-group required name="goodOrServ" [ngModel]="selectedRadio" [ngModelOptions]="{standalone: true}">
+                    <mat-radio-button value="good"> Good </mat-radio-button>
+                    <br><br>
+                    <mat-radio-button value="service"> Service </mat-radio-button>
+                </mat-radio-group>
+                <br>
+                <mat-form-field>
+                    <input matInput placeholder="Title" name="title" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <textarea matInput placeholder="Give a description" name="description" required></textarea>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input type="number" matInput placeholder="Price (or price per hour if service)" name="price" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-select name="day" placeholder="Select a day">
+                        <mat-option value="1">Monday</mat-option>
+                        <mat-option value="2">Tuesday</mat-option>
+                        <mat-option value="3">Wednesday</mat-option>
+                        <mat-option value="4">Thursday</mat-option>
+                        <mat-option value="5">Friday</mat-option>
+                        <mat-option value="6">Saturday</mat-option>
+                        <mat-option value="7">Sunday</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+                <h5>Finally, give some keywords so people can find what you propose more easily</h5>
+                <mat-form-field>
+                    <input matInput placeholder="keyword1, keyword2, ..." name="keywords" required>
+                </mat-form-field>
+                <br>
+                <button mat-raised-button color="primary" type="submit">Propose</button>
+            </form>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>

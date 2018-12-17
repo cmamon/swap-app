@@ -14,6 +14,7 @@ MongoClient.connect(url, { useNewUrlParser : true }, (err, client) => {
 });
 
 const app = express();
+const availabilityRoutes = require('./src/routes/availability_routes.js');
 const userRoutes = require('./src/routes/user_routes.js');
 const propertyRoutes = require('./src/routes/property_routes.js');
 const serviceRoutes = require('./src/routes/service_routes.js');
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
     req.db = db;
     next();
 });
+app.use('/availabilities', availabilityRoutes);
 app.use('/users', userRoutes);
 app.use('/properties', propertyRoutes);
 app.use('/services', serviceRoutes);

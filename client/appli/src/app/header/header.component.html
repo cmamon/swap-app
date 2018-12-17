@@ -1,6 +1,6 @@
 <mat-toolbar color="warn">
     <mat-toolbar-row #toolbarRow>
-        <p>SwapApp <mat-icon>cached</mat-icon> </p>
+        <a mat-button routerLink="/"><p>SwapApp <mat-icon>cached</mat-icon> </p></a>
         <!-- This fills the remaining space of the current row -->
         <span class="example-fill-remaining-space"></span>
 
@@ -14,13 +14,17 @@
         <a
             *ngIf="!userIsAuthenticated"
             mat-button
-            routerLink="/signup"> <mat-icon>account_circle</mat-icon> Sign Up </a>
+            routerLink="/signup"> Sign Up </a>
 
         <!-- Si l'utilisateur est connecté -->
         <a
             *ngIf="userIsAuthenticated"
             mat-button
             routerLink="/account"> <mat-icon>account_circle</mat-icon> My account </a>
-        <button *ngIf="userIsAuthenticated" mat-button (click) = "onLogout()"> Logout </button>
+        <a
+            *ngIf="userIsAuthenticated"
+            mat-button
+            routerLink="/propose"> Propose </a>
+        <button *ngIf="userIsAuthenticated" mat-button (click) = "onLogout()"> <mat-icon>exit_to_app</mat-icon> Logout </button>
     </mat-toolbar-row>
 </mat-toolbar>

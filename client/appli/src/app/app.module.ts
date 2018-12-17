@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { NgModule } from '@angular/core';
@@ -20,6 +20,7 @@ import { AuthInterceptor } from './auth/auth-interceptor';
         BrowserModule,
         FormsModule,
         HttpClientModule,
+        ReactiveFormsModule,
         AdminModule,
         PublicModule,
         AppRoutingModule

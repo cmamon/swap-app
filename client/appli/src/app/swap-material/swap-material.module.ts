@@ -4,32 +4,41 @@ import {
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
+    MatDatepickerModule,
     MatDividerModule,
     MatExpansionModule,
     MatFormFieldModule,
+    MatGridListModule,
+    MatIconModule,
     MatInputModule,
     MatListModule,
     MatPaginatorModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatStepperModule,
     MatTableModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatDatepickerModule} from '@angular/material';
+    MatToolbarModule
+} from '@angular/material';
 
 const MATERIAL_MODULES = [
     CommonModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
+    MatDatepickerModule,
     MatDividerModule,
     MatExpansionModule,
     MatFormFieldModule,
+    MatGridListModule,
+    MatIconModule,
     MatInputModule,
     MatListModule,
     MatPaginatorModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatStepperModule,
     MatTableModule,
     MatToolbarModule,
-    MatIconModule,
-    MatDatepickerModule
 ];
 
 @NgModule({
