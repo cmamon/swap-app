@@ -4,7 +4,7 @@
         "email" : "christophe.quenette@etu.umontpellier.fr",
         "propOrServ" : "service",
         "propOrServId" : "serv_1",
-        "day": 2,
+        "day": 25,
         "month": 11,
         "year": 2018
     },
@@ -13,7 +13,7 @@
         "email" : "julien.rousse@etu.umontpellier.fr",
         "propOrServ" : "property",
         "propOrServId" : "prop_1",
-        "day": 2,
+        "day": 25,
         "month": 11,
         "year": 2018
     },
@@ -22,7 +22,7 @@
         "email" : "pierre.pompidor@lirmm.fr",
         "propOrServ" : "service",
         "propOrServId" : "serv_1",
-        "day": 2,
+        "day": 25,
         "month": 11,
         "year": 2018
     },
@@ -31,7 +31,7 @@
         "email" : "christophe.quenette@etu.umontpellier.fr",
         "propOrServ" : "property",
         "propOrServId" : "prop_1",
-        "day": 2,
+        "day": 25,
         "month": 11,
         "year": 2018
     },
@@ -40,7 +40,7 @@
         "email" : "dorian@do.fr",
         "propOrServ" : "property",
         "propOrServId" : "prop_1",
-        "day": 2,
+        "day": 25,
         "month": 11,
         "year": 2018
     },
@@ -49,7 +49,7 @@
         "email" : "aurelie.murcia@etu.umontpellier.fr",
         "propOrServ" : "property",
         "propOrServId" : "prop_1",
-        "day": 2,
+        "day": 25,
         "month": 11,
         "year": 2018
     }
