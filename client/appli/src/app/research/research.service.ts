@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-
+import { serverUrl } from '../config/config';
 
 @Injectable()
 export class ResearchService {
@@ -13,7 +13,7 @@ export class ResearchService {
     searchProperties(data) {
         this.services.splice(0, this.services.length);
         this.properties.splice(0, this.properties.length);
-        const url = 'http://localhost:8888/properties/search';
+        const url = serverUrl + 'properties/search';
         const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
         this.http.post(url, data, httpOptions).subscribe((res: []) => {
             this.properties.push(...res);
@@ -23,7 +23,7 @@ export class ResearchService {
     searchServices(data) {
         this.services.splice(0, this.services.length);
         this.properties.splice(0, this.properties.length);
-        const url = 'http://localhost:8888/services/search';
+        const url = serverUrl + 'services/search';
         const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
         this.http.post(url, data, httpOptions).subscribe((res: []) => {
             this.services.push(...res);

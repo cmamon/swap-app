@@ -1,1 +1,1 @@
-const devUrl = 'http://localhost:8888/';
+export const serverUrl = 'http://localhost:8888/';

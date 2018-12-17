@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { serverUrl } from '../config/config';
 
 @Injectable({
     providedIn: 'root'
@@ -14,7 +15,7 @@ export class ProposeService {
     constructor(private http: HttpClient) { }
 
     addGood(good) {
-        const url = 'http://localhost:8888/properties/';
+        const url = serverUrl + 'properties/';
         console.log(good);
         this.http.post(url, good, this.httpOptions).subscribe((res) => {
             console.log(res);
@@ -22,7 +23,7 @@ export class ProposeService {
     }
 
     addService(service) {
-        const url = 'http://localhost:8888/services/';
+        const url = serverUrl + 'services/';
         console.log(service);
         this.http.post<any>(url, service, this.httpOptions).subscribe((res) => {
             console.log(res);
@@ -30,7 +31,7 @@ export class ProposeService {
     }
 
     addAvailability(goodOrService) {
-        const url = 'http://localhost:8888/availabilities/';
+        const url = serverUrl + 'availabilities/';
         console.log(goodOrService);
         this.http.post<any>(url, goodOrService, this.httpOptions).subscribe((res) => {
             console.log(res);

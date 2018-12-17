@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { serverUrl } from '../config/config';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -39,13 +40,13 @@ export class AuthService {
 
     // Envoi une requete au serveur pour inscrire un nouveau membre
     createUser(newUser) {
-        const url = 'http://localhost:8888/users/signup';
+        const url = serverUrl + 'users/signup';
         this.postToServer(url, newUser);
     }
 
     // Envoi une requête pour se connecter
     login(email: string, password: string) {
-        const url = 'http://localhost:8888/users/login';
+        const url = serverUrl + 'users/login';
         const data = { email: email, password: password };
         this.postToServer(url, data);
     }
