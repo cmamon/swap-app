@@ -1,16 +1,22 @@
 mat-card{
-    margin-top: 10px;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
 }
 mat-card-title{
     text-align: center;
+    background: #2C2F33;
+    color: white;
+    padding: 5px;
 }
 
 img{
-    max-height: 300px;
-    max-width: 300px;
+    max-height: 200px;
+    max-width: 200px;
 }
 
 button {
+    display: block;
     width: 30%;
     margin: auto;
     min-width: 200px;
@@ -19,4 +25,5 @@ button {
 .accordion{
     width: 400px;
     min-width: 400px;
+    margin: auto;
 }

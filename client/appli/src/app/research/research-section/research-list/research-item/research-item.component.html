@@ -1,6 +1,6 @@
 <mat-card>
     <div>
-        <mat-card-title> Title : {{ resultat.title }} </mat-card-title>
+        <mat-card-title>{{ resultat.title }} </mat-card-title>
         <hr>
         <p>Description : {{ resultat.description }}</p>
         <div *ngIf="type ==='property'">
@@ -36,22 +36,22 @@
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
-
+                    
                 <button
                     (click) = "onBuy()" 
                     mat-raised-button
-                    color="accent"
+                    color="primary"
                     type="submit"> Buy </button>
                 
             </mat-expansion-panel>
         </mat-accordion>
     </div>
-      
+    
     <button
       *ngIf="!userIsAuthenticated"
       (click) = "onClickB()" 
       mat-raised-button
-      color="accent"
+      color="primary"
       type="submit"> Buy </button>
 
 </mat-card>

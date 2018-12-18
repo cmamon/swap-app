@@ -12,6 +12,8 @@ p {
 }
 
 button {
+    display: block;
+    min-width: 300px;
     width: 40%;
     margin: auto;
 }

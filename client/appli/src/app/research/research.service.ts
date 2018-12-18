@@ -37,4 +37,15 @@ export class ResearchService {
     getServices() {
         return this.services;
     }
+
+    getReservations(id: string) {
+        const results = [];
+        const url = serverUrl + 'uses/forOne';
+        const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+        this.http.post(url, {propId: id}, httpOptions).subscribe((res: []) => {
+            results.push(...res);
+        });
+        console.log(results);
+        return results;
+    }
 }

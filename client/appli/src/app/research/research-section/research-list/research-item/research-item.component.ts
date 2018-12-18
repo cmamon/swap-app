@@ -13,13 +13,7 @@ export class ResearchItemComponent implements OnInit, OnDestroy {
   @Input() resultat;
   @Input() type: string;
   today: Date;
-  reservations = [
-    {
-      day: 26,
-      month: 11,
-      year: 2018
-    }
-  ];
+  reservations = [];
 
   userIsAuthenticated = false; // Non connecté par défaut
   private authListenerSubs: Subscription; // Pour écouter un changement connecté/déconnecté
@@ -65,11 +59,11 @@ export class ResearchItemComponent implements OnInit, OnDestroy {
   }
 
   onBuy() {
-
+    // this.researchService.reserved();
   }
 
   onOpened() {
-    
+    this.reservations = this.researchService.getReservations(this.resultat.propId);
   }
 
 }
