@@ -72,6 +72,6 @@ export class AuthService {
         this.token = null;
         this.isAuth = false;
         this.authStatusListener.next(false);
-        this.router.navigate(['/login']); // On redirige l'user sur la page de login (ou autre)
+        this.router.navigate(['/']); // On redirige l'user sur la page d'accueil'
     }
 }

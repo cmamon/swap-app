@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
     imports: [
@@ -28,7 +29,8 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     declarations: [
         AppComponent,
         LoginComponent,
-        SignupComponent
+        SignupComponent,
+        HomePageComponent
     ],
     bootstrap: [ AppComponent ],
     providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }]

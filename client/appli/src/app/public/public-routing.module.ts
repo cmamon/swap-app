@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { HomePageComponent } from '../home-page/home-page.component';
 import { LoginComponent } from '../auth/login/login.component';
 import { PublicComponent } from './public.component';
 import { ProposeComponent } from '../propose/propose.component';
@@ -13,14 +14,12 @@ const routes: Routes = [
         path: '',
         component: PublicComponent,
         children: [
-            {
-                path: 'search',
-                component: ResearchSectionComponent
-            },
-            { path: 'account', component: UserPanelComponent},
-            { path: 'login', component: LoginComponent},
-            { path: 'propose', component: ProposeComponent},
-            { path: 'signup', component: SignupComponent}
+            { path: '', component: HomePageComponent },
+            { path: 'account', component: UserPanelComponent },
+            { path: 'login', component: LoginComponent },
+            { path: 'propose', component: ProposeComponent },
+            { path: 'search', component: ResearchSectionComponent },
+            { path: 'signup', component: SignupComponent }
         ]
     }
 ];

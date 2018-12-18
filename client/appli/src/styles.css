@@ -2,6 +2,11 @@
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
+@font-face {
+    font-family: alegreya;
+    src: url(./assets/fonts/AlegreyaSans-Black.otf) format("opentype");
+}
+
 .example-fill-remaining-space {
   /* This fills the remaining space, by using flexbox.
      Every toolbar row uses a flexbox row layout. */
