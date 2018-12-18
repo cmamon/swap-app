@@ -54,7 +54,6 @@ const search = (req, res, next) => {
                         "propOrServId" : prop.propId,
                         "days" : {$in : req.body.days}
                     };
-                    console.log(req.body.days);
                 }
 
                 req.db.collection('availabilities').find(query).toArray((err, docs)=> {

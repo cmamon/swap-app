@@ -2,10 +2,12 @@
     <mat-card-title>My personal informations</mat-card-title>
 
     <mat-list>
-        <mat-list-item *ngFor="let field of user | keyvalue">
-            {{field.key}}: {{field.value}}
-            <!-- <p mat-line> {{folder.updated | date}} </p> -->
-        </mat-list-item>
+        <ng-container *ngFor="let field of user | keyvalue" >
+            <mat-list-item *ngIf="field.key !== '_id' && field.key !== 'password'">
+                {{field.key}}: {{field.value}}
+                <!-- <p mat-line> {{folder.updated | date}} </p> -->
+            </mat-list-item>
+        </ng-container>
     </mat-list>
 
     <mat-accordion>

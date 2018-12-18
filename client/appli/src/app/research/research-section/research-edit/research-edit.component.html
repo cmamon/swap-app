@@ -17,15 +17,15 @@
     <div id="options">
       <mat-radio-group required name="radio" [ngModel]="selectedRadio">
         <mat-radio-button value="1"> Property </mat-radio-button>
-        <br> 
+        <br><br>
         <mat-radio-button value="2"> Service </mat-radio-button>
       </mat-radio-group>
 
       <mat-form-field id="date">
-        <input 
-          matInput 
+        <input
+          matInput
           [min]="today"
-          [matDatepicker]="picker" 
+          [matDatepicker]="picker"
           name="dateChoice"
           ngModel
           placeholder="Choose a date (optionnal)">
@@ -34,6 +34,8 @@
       </mat-form-field>
     </div>
 
+    <br><br>
     <button mat-raised-button color="primary" type="submit">Find</button>
+    <br>
   </form>
 </mat-card>

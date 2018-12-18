@@ -37,15 +37,18 @@ export class ProposeComponent implements OnInit {
         return;
         // Ajouter le bien ou le service
         if (form.value.radio === 'good') {
-            this.proposeServ.addGood(object);
-            availability.propOrServ = 'property';
+            this.proposeServ.addGood(object)
+              .subscribe(good => console.log(good));
+            availability.propOrServ = 'good';
         } else {
-            this.proposeServ.addService(object);
+            this.proposeServ.addService(object)
+              .subscribe(service => console.log(service));
             availability.propOrServ = 'service';
         }
 
         // Ajouter une disponibilité
-        this.proposeServ.addAvailability(availability);
+        this.proposeServ.addAvailability(availability)
+          .subscribe(availability => console.log(availability));
 
         this.router.navigate(['/']); // On redirige l'user sur la page d'accueil
     }

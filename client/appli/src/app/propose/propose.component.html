@@ -4,9 +4,10 @@
         <mat-grid-tile>
             <form (submit)="onSubmit(proposeForm)" #proposeForm="ngForm">
                 <mat-radio-group required name="goodOrServ" [ngModel]="selectedRadio" [ngModelOptions]="{standalone: true}">
-                    <mat-radio-button value="good"> Good </mat-radio-button>
-                    <br><br>
-                    <mat-radio-button value="service"> Service </mat-radio-button>
+                    <p><mat-radio-button value="good"> Good </mat-radio-button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <mat-radio-button value="service"> Service </mat-radio-button>
+                    </p>
                 </mat-radio-group>
                 <br>
                 <mat-form-field>
@@ -23,13 +24,13 @@
 
                 <mat-form-field>
                     <mat-select name="day" placeholder="Select a day">
-                        <mat-option value="1">Monday</mat-option>
-                        <mat-option value="2">Tuesday</mat-option>
-                        <mat-option value="3">Wednesday</mat-option>
-                        <mat-option value="4">Thursday</mat-option>
-                        <mat-option value="5">Friday</mat-option>
-                        <mat-option value="6">Saturday</mat-option>
-                        <mat-option value="7">Sunday</mat-option>
+                        <mat-option value="0">Monday</mat-option>
+                        <mat-option value="1">Tuesday</mat-option>
+                        <mat-option value="2">Wednesday</mat-option>
+                        <mat-option value="3">Thursday</mat-option>
+                        <mat-option value="4">Friday</mat-option>
+                        <mat-option value="5">Saturday</mat-option>
+                        <mat-option value="6">Sunday</mat-option>
                     </mat-select>
                 </mat-form-field>
 
