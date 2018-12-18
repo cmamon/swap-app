@@ -29,13 +29,39 @@ export class AuthService {
 
                 // Stocker dans le stockage local (HTML5 Local Storage) les infos sur
                 // l'utilisateur et le token
-                localStorage.setItem('currentUser', JSON.stringify(res.userData));
+                this.saveAuthData(JSON.stringify(res.userData));
 
                 this.authStatusListener.next(true);
                 this.isAuth = true;
                 this.router.navigate(['/']); // On redirige l'user sur la page d'accueil
             }
         });
+    }
+
+    autoAuthUser() {
+        const authInfo = this.getAuthData();
+        if (authInfo.token) {
+            this.token = authInfo.token;
+            this.isAuth = true;
+            this.authStatusListener.next(true);
+        }
+    }
+
+    private getAuthData() {
+        const userData = localStorage.getItem('currentUser');
+        const token = JSON.parse(userData).token;
+        if (!token) {
+            return;
+        }
+        return {token: token};
+    }
+
+    private saveAuthData(userData: string) {
+        localStorage.setItem('currentUser', userData);
+    }
+
+    private clearAuthData() {
+        localStorage.removeItem('currentUser');
     }
 
     // Envoi une requete au serveur pour inscrire un nouveau membre
@@ -72,6 +98,7 @@ export class AuthService {
         this.token = null;
         this.isAuth = false;
         this.authStatusListener.next(false);
+        this.clearAuthData();
         this.router.navigate(['/']); // On redirige l'user sur la page d'accueil'
     }
 }

@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     userIsAuthenticated = false; // Non connecté par défaut
     private authListenerSubs: Subscription; // Pour écouter un changement connecté/déconnecté
-    private username: string;
+    username: string;
 
     constructor(private authService: AuthService) { }
 
@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
                 this.userIsAuthenticated = isAuthenticated;
             });
 
-        let user = localStorage.getItem('currentUser');
+        const user = localStorage.getItem('currentUser');
         this.username = JSON.parse(user).data.firstName;
     }
 
