@@ -32,8 +32,12 @@ export class ResearchItemComponent implements OnInit, OnDestroy {
     this.authListenerSubs.unsubscribe(); // On se désabonne
   }
 
-  onBuy() {
+  onClickB() {
     this.router.navigate(['/login']);
+  }
+
+  onBuy() {
+
   }
 
 }

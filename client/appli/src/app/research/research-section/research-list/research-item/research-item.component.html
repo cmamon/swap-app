@@ -1,45 +1,54 @@
 <mat-card>
-    <mat-card-title> Title : {{ resultat.title }} </mat-card-title>
-    <hr>
-    <p>Description : {{ resultat.description }}</p>
-    <div *ngIf="type ==='property'">
-        <img [src]="resultat.pictureLink" alt="Image"/>
-        <p>Price : {{ resultat.price }}$</p>
-    </div>
-    <div *ngIf="type ==='service'">
-        <p>Price/h : {{ resultat.pricePerHour }}$</p>
+    <div>
+        <mat-card-title> Title : {{ resultat.title }} </mat-card-title>
+        <hr>
+        <p>Description : {{ resultat.description }}</p>
+        <div *ngIf="type ==='property'">
+            <img [src]="resultat.pictureLink" alt="Image"/>
+            <p>Price : {{ resultat.price }}$</p>
+        </div>
+        <div *ngIf="type ==='service'">
+            <p>Price/h : {{ resultat.pricePerHour }}$</p>
+        </div>
     </div>
 
+    <div *ngIf="userIsAuthenticated" class="accordion">
+        <mat-accordion >
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Reserved it
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Select a date
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+        
+                <mat-form-field id="date">
+                    <input 
+                    matInput 
+                    [min]="today"
+                    [matDatepicker]="picker" 
+                    name="dateChoice"
+                    ngModel
+                    placeholder="Choose a date (optionnal)">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
 
-    <mat-accordion *ngIf="userIsAuthenticated">
-        <mat-expansion-panel>
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    Reserved it
-                </mat-panel-title>
-                <mat-panel-description>
-                    Select a date
-                </mat-panel-description>
-            </mat-expansion-panel-header>
-      
-            <mat-form-field id="date">
-                <input 
-                  matInput 
-                  [min]="today"
-                  [matDatepicker]="picker" 
-                  name="dateChoice"
-                  ngModel
-                  placeholder="Choose a date (optionnal)">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-            
-        </mat-expansion-panel>
-      </mat-accordion>
+                <button
+                    (click) = "onBuy()" 
+                    mat-raised-button
+                    color="accent"
+                    type="submit"> Buy </button>
+                
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
       
     <button
       *ngIf="!userIsAuthenticated"
-      (click) = "onBuy()" 
+      (click) = "onClickB()" 
       mat-raised-button
       color="accent"
       type="submit"> Buy </button>

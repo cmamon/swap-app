@@ -15,3 +15,8 @@ button {
     margin: auto;
     min-width: 200px;
 }
+
+.accordion{
+    width: 400px;
+    min-width: 400px;
+}
