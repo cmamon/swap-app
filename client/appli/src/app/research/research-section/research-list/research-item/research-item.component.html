@@ -14,7 +14,7 @@
 
     <div *ngIf="userIsAuthenticated" class="accordion">
         <mat-accordion >
-            <mat-expansion-panel>
+            <mat-expansion-panel (opened)="onOpened()">
                 <mat-expansion-panel-header>
                     <mat-panel-title>
                         Reserved it
@@ -27,6 +27,7 @@
                 <mat-form-field id="date">
                     <input 
                     matInput 
+                    [matDatepickerFilter]="myFilter"
                     [min]="today"
                     [matDatepicker]="picker" 
                     name="dateChoice"
