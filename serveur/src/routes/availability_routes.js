@@ -4,6 +4,7 @@ const avaController = require('../controllers/availability_controller');
 
 router.get('/', avaController.list);
 router.post('/', avaController.add);
+router.post('/forOne', avaController.forOneProduct);
 // router.delete('/', avaController.del);
 // router.post('/search', avaController.search);
 

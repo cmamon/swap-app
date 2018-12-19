@@ -27,3 +27,12 @@ button {
     min-width: 400px;
     margin: auto;
 }
+
+#date{
+    display:block;
+    margin:auto;
+}
+
+p{
+    text-align: center;
+}

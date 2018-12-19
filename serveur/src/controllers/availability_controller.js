@@ -26,4 +26,14 @@ const add = (req, res, next) => {
     });
 };
 
-module.exports = { list, add };
+const forOneProduct = (req, res) => {
+    req.db.collection('availabilities').find({propOrServId: req.body.prodId}).toArray((err, docs) => {
+        if (err) {
+            return next(err);
+        }
+        res.setHeader('Content-type', 'application/json');
+        res.end(JSON.stringify(docs[0].days));
+    });
+};
+
+module.exports = { list, add, forOneProduct };
