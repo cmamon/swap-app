@@ -1,7 +1,9 @@
 import { SelectionModel } from '@angular/cdk/collections';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { UserService } from '../user.service';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
+
+import { AdminService } from '../admin.service';
+import { UserService } from '../../users/user.service';
 
 @Component({
     selector: 'app-userlist',
@@ -25,10 +27,10 @@ export class UserListComponent implements OnInit {
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
-    constructor(private service: UserService) { }
+    constructor(private userServ: UserService, private adminServ: AdminService) { }
 
     ngOnInit() {
-        this.service.getUsers().subscribe(res => {
+        this.userServ.getUsers().subscribe(res => {
             this.userList = res;
             this.dataSource.data = res;
         });
@@ -51,6 +53,12 @@ export class UserListComponent implements OnInit {
       this.isAllSelected() ?
           this.selection.clear() :
           this.dataSource.data.forEach(row => this.selection.select(row));
+    }
+
+    deleteUsers() {
+        this.selection.selected.forEach(user => {
+            this.adminServ.deleteUser(user).subscribe();
+        });
     }
 
 }

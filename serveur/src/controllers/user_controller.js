@@ -14,6 +14,17 @@ const list = (req, res) => {
     });
 };
 
+const deleteUser = (req, res) => {
+    req.db.collection('users').deleteOne({ email: req.params.email }, (err, user) => {
+        if (err) {
+            return next(err);
+        }
+
+        res.setHeader('Content-type', 'application/json');
+        res.end(JSON.stringify(user));
+    });
+};
+
 const getUserByEmail = (req, res) => {
     req.db.collection('users').findOne({ email: req.params.email }, (err, user) => {
         if (err) {
@@ -93,4 +104,4 @@ const login = (req, res, next) => {
     });
 };
 
-module.exports = { list, register, login, getUserByEmail };
+module.exports = { list, register, login, getUserByEmail, deleteUser };
