@@ -13,6 +13,7 @@ const list = (req, res) => {
 const add = (req, res, next) => {
     let user = new Service(
         req.body.propId,
+        req.body.owner,
         req.body.title,
         req.body.description,
         req.body.pictureLink,

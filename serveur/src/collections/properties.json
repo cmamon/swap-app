@@ -1,6 +1,7 @@
 [
 	{
 		"propId" : "prop_1",
+		"owner" : "admin@swap.fr",
 		"title" : "marteau",
 		"description" : "Outil de travail",
 		"pictureLink" : "https://www.jadisetgourmande.fr/jadis_images/produits/outil-lait.jpg",
@@ -8,6 +9,7 @@
 	},
 	{
 		"propId" : "prop_2",
+		"owner" : "admin@swap.fr",
 		"title" : "voiture",
 		"description" : "Je mets a disposition ma voiture",
 		"pictureLink" : "lien2",
@@ -15,6 +17,7 @@
 	},
 	{
 		"propId" : "prop_3",
+		"owner" : "admin@swap.fr",
 		"title" : "tondeuse",
 		"description" : "Je peux vous preter ma tondeuse",
 		"pictureLink" : "lien3",
@@ -22,6 +25,7 @@
 	},
 	{
 		"propId" : "prop_4",
+		"owner" : "admin@swap.fr",
 		"title" : "ski",
 		"description" : "Je ne partirai pas en vacances donc je peux preter mes skis",
 		"pictureLink" : "lien4",
@@ -29,6 +33,7 @@
 	},
 	{
 		"propId" : "prop_5",
+		"owner" : "admin@swap.fr",
 		"title" : "clé anglaise",
 		"description" : "Si besoin",
 		"pictureLink" : "https://www.jadisetgourmande.fr/jadis_images/produits/outil-lait.jpg",

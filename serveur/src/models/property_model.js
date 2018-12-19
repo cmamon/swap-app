@@ -1,6 +1,7 @@
 class Property {
-    constructor(propId, title, description, pictureLink, price) {
+    constructor(propId, owner, title, description, pictureLink, price) {
         this.propId = propId;
+        this.owner = owner;
         this.title = title;
         this.description = description;
         this.pictureLink = pictureLink;
