@@ -27,18 +27,13 @@ const book = (req, res) => {
     
 }
 
-=======
->>>>>>> 9285db64a9ee7e733ff92d38139476fe54e08317
+
 const forOneProduct = (req, res) => {
     req.db.collection('uses').find({propOrServId: req.body.prodId}).toArray((err, docs) => {
         const reponse = []
-<<<<<<< HEAD
+
         docs.forEach(el => { 
             reponse.push({day: el.day, month: el.month, year: el.year}) 
-=======
-        docs.forEach(el => {
-            reponse.push({day: el.day, month: el.month, year: el.year})
->>>>>>> 9285db64a9ee7e733ff92d38139476fe54e08317
         });
         if (err) {
             return next(err);
