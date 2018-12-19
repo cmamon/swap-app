@@ -54,7 +54,7 @@ export class ProposeComponent implements OnInit {
                 this.proposeServ.addGoodDescription(goodDescription)
                 .subscribe(goodDescription => console.log(goodDescription));
 
-                availability.propOrServ = 'good';
+                availability.propOrServ = 'property';
                 availability.propOrServId = object.propId;
 
                 // Ajouter une disponibilité
