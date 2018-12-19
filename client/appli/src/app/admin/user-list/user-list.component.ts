@@ -12,9 +12,9 @@ import { UserService } from '../../users/user.service';
 })
 
 export class UserListComponent implements OnInit {
-    private userList: Object[];
-    selection = new SelectionModel<Object>(true, []);
-    dataSource = new MatTableDataSource<Object>();
+    private userList: Element[];
+    selection = new SelectionModel<Element>(true, []);
+    dataSource = new MatTableDataSource<Element>();
     displayedColumns: string[] = [
         'select',
         'email',
@@ -58,8 +58,16 @@ export class UserListComponent implements OnInit {
     deleteUsers() {
         this.selection.selected.forEach(user => {
             this.adminServ.deleteUser(user).subscribe();
+
+            let index: number = this.userList.findIndex(d => d === user);
+            this.dataSource.data.splice(index, 1);
+
+            this.dataSource = new MatTableDataSource<Element>(this.dataSource.data);
+            setTimeout(() => {
+                this.dataSource.paginator = this.paginator;
+            });
         });
-        window.location.reload();
+        this.selection = new SelectionModel<Element>(true, []);
     }
 
 }
