@@ -28,8 +28,17 @@ export class ProposeComponent implements OnInit {
         const rawKeywords = form.value.keywords.split(',');
         rawKeywords.forEach(keyword => { this.keywords.push(keyword.trim()); });
 
+        /* Récupérer l'email de celui qui poste l'annonce */
+        const userData = localStorage.getItem('currentUser');
+        if (!userData) {
+            return;
+        }
+
+        const userEmail = JSON.parse(userData).data.email;
+
         let object: {[k: string]: any} = {};
         object.title = form.value.title;
+        object.owner = userEmail;
         object.description = form.value.description;
 
         let availability: {[k: string]: any} = {};
