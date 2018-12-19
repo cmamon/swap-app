@@ -47,7 +47,6 @@ export class ProposeService {
 
     addGood(good) {
         const url = serverUrl + 'properties/';
-        console.log(good);
         return this.http.post<any>(url, good, this.httpOptions).pipe(
             catchError(this.handleError)
         );
@@ -55,7 +54,6 @@ export class ProposeService {
 
     addGoodDescription(goodDesc) {
         const url = serverUrl + 'goods-desc/';
-        console.log(goodDesc);
         return this.http.post<any>(url, goodDesc, this.httpOptions).pipe(
             catchError(this.handleError)
         );
@@ -63,7 +61,6 @@ export class ProposeService {
 
     addService(service) {
         const url = serverUrl + 'services/';
-        console.log(service);
         return this.http.post<any>(url, service, this.httpOptions).pipe(
             catchError(this.handleError)
         );
@@ -71,7 +68,6 @@ export class ProposeService {
 
     addServiceDescription(servDesc) {
         const url = serverUrl + 'services-desc/';
-        console.log(servDesc);
         return this.http.post<any>(url, servDesc, this.httpOptions).pipe(
             catchError(this.handleError)
         );
@@ -79,7 +75,6 @@ export class ProposeService {
 
     addAvailability(goodOrService) {
         const url = serverUrl + 'availabilities/';
-        console.log(goodOrService);
         return this.http.post<any>(url, goodOrService, this.httpOptions).pipe(
             catchError(this.handleError)
         );

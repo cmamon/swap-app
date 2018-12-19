@@ -18,7 +18,6 @@ export class ResearchEditComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
     const keywords = form.value.research.split(',');
     const keywordsOK = [];
     keywords.forEach(element => {

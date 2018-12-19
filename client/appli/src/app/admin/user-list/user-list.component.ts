@@ -59,6 +59,7 @@ export class UserListComponent implements OnInit {
         this.selection.selected.forEach(user => {
             this.adminServ.deleteUser(user).subscribe();
         });
+        window.location.reload();
     }
 
 }
