@@ -1,8 +1,5 @@
 const Uses = require('../models/uses_model');
 
-<<<<<<< HEAD
-
-
 const book = (req, res) => {
 
     let count = req.db.collection('uses').countDocuments({}).then((cmp) => {
@@ -23,8 +20,6 @@ const book = (req, res) => {
             res.send('Reservation created successfully\n');
         });
     })
-
-    
 }
 
 
