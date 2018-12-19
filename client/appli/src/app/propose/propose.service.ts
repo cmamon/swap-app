@@ -31,6 +31,20 @@ export class ProposeService {
         'Something bad happened; please try again later.');
     };
 
+    getGoods() {
+        var o: Observable<any> = this.http.get(serverUrl + 'properties/').pipe(
+            catchError(this.handleError)
+        );
+        return o;
+    }
+
+    getServices() {
+        var o: Observable<any> = this.http.get(serverUrl + 'services/').pipe(
+            catchError(this.handleError)
+        );
+        return o;
+    }
+
     addGood(good) {
         const url = serverUrl + 'properties/';
         console.log(good);
@@ -38,10 +52,27 @@ export class ProposeService {
             catchError(this.handleError)
         );
     }
+
+    addGoodDescription(goodDesc) {
+        const url = serverUrl + 'goods-desc/';
+        console.log(goodDesc);
+        return this.http.post<any>(url, goodDesc, this.httpOptions).pipe(
+            catchError(this.handleError)
+        );
+    }
+
     addService(service) {
         const url = serverUrl + 'services/';
         console.log(service);
         return this.http.post<any>(url, service, this.httpOptions).pipe(
+            catchError(this.handleError)
+        );
+    }
+
+    addServiceDescription(servDesc) {
+        const url = serverUrl + 'services-desc/';
+        console.log(servDesc);
+        return this.http.post<any>(url, servDesc, this.httpOptions).pipe(
             catchError(this.handleError)
         );
     }

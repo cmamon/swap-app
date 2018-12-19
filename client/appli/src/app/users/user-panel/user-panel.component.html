@@ -5,7 +5,7 @@
         <ng-container *ngFor="let field of user | keyvalue" >
             <mat-list-item *ngIf="field.key !== '_id' && field.key !== 'password'">
                 {{field.key}}: {{field.value}}
-                <!-- <p mat-line> {{folder.updated | date}} </p> -->
+                <!-- <p mat-line> {{field.key}}: {{field.value}} </p> -->
             </mat-list-item>
         </ng-container>
     </mat-list>

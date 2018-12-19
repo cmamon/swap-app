@@ -3,7 +3,7 @@
     <mat-grid-list cols="1" rowHeight="2:1">
         <mat-grid-tile>
             <form (submit)="onSubmit(proposeForm)" #proposeForm="ngForm">
-                <mat-radio-group required name="goodOrServ" [ngModel]="selectedRadio" [ngModelOptions]="{standalone: true}">
+                <mat-radio-group required name="goodOrServ" [ngModel]="selectedType" ngModel>
                     <p><mat-radio-button value="good"> Good </mat-radio-button>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <mat-radio-button value="service"> Service </mat-radio-button>
@@ -11,19 +11,19 @@
                 </mat-radio-group>
                 <br>
                 <mat-form-field>
-                    <input matInput placeholder="Title" name="title" required>
+                    <input matInput type="text" name="title" placeholder="Title" required ngModel>
                 </mat-form-field>
 
                 <mat-form-field>
-                    <textarea matInput placeholder="Give a description" name="description" required></textarea>
+                    <textarea matInput placeholder="Give a description" name="description" ngModel required></textarea>
                 </mat-form-field>
 
                 <mat-form-field>
-                    <input type="number" matInput placeholder="Price (or price per hour if service)" name="price" required>
+                    <input type="number" matInput placeholder="Price (or price per hour if service)" name="price" ngModel required>
                 </mat-form-field>
 
                 <mat-form-field>
-                    <mat-select name="day" placeholder="Select a day">
+                    <mat-select name="day" placeholder="Select one or many day(s)" [value]="selectedDay" ngModel multiple>
                         <mat-option value="0">Monday</mat-option>
                         <mat-option value="1">Tuesday</mat-option>
                         <mat-option value="2">Wednesday</mat-option>
@@ -37,7 +37,7 @@
 
                 <h5>Finally, give some keywords so people can find what you propose more easily</h5>
                 <mat-form-field>
-                    <input matInput placeholder="keyword1, keyword2, ..." name="keywords" required>
+                    <input matInput placeholder="keyword1, keyword2, ..." name="keywords" required ngModel>
                 </mat-form-field>
                 <br>
                 <button mat-raised-button color="primary" type="submit">Propose</button>

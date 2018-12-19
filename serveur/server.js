@@ -19,6 +19,8 @@ const userRoutes = require('./src/routes/user_routes.js');
 const propertyRoutes = require('./src/routes/property_routes.js');
 const serviceRoutes = require('./src/routes/service_routes.js');
 const usesRoutes = require('./src/routes/uses_routes.js')
+const goodDescRoutes = require('./src/routes/good_desc_routes.js')
+const serviceDescRoutes = require('./src/routes/service_desc_routes.js')
 
 app.use(cors());
 app.use(bodyParser.urlencoded( { extended: true } ));
@@ -34,6 +36,8 @@ app.use('/users', userRoutes);
 app.use('/properties', propertyRoutes);
 app.use('/services', serviceRoutes);
 app.use('/uses', usesRoutes);
+app.use('/goods-desc', goodDescRoutes);
+app.use('/services-desc', serviceDescRoutes);
 
 let port = process.env.PORT || 8888;
 
