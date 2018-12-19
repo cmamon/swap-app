@@ -20,7 +20,6 @@ export class ProposeComponent implements OnInit {
     }
 
     onSubmit(form: NgForm) {
-        console.log(form.value);
         if (form.invalid) {
             return;
         }
@@ -53,22 +52,19 @@ export class ProposeComponent implements OnInit {
                 object.price = form.value.price;
                 object.propId = 'prop_' + (goods.length + 1);
 
-                this.proposeServ.addGood(object)
-                .subscribe(good => console.log(good));
+                this.proposeServ.addGood(object).subscribe();
 
                 let goodDescription: {[k: string]: any} = {};
                 goodDescription.propId = object.propId;
                 goodDescription.keyword = this.keywords;
 
-                this.proposeServ.addGoodDescription(goodDescription)
-                .subscribe(goodDescription => console.log(goodDescription));
+                this.proposeServ.addGoodDescription(goodDescription).subscribe();
 
                 availability.propOrServ = 'property';
                 availability.propOrServId = object.propId;
 
                 // Ajouter une disponibilité
-                this.proposeServ.addAvailability(availability)
-                .subscribe(availability => console.log(availability));
+                this.proposeServ.addAvailability(availability).subscribe();
 
                 this.router.navigate(['/']); // On redirige l'user sur la page d'accueil
             });
@@ -78,22 +74,20 @@ export class ProposeComponent implements OnInit {
                 object.pricePerHour = form.value.price;
                 object.servId = 'serv_' + (services.length + 1);
 
-                this.proposeServ.addService(object)
-                .subscribe(service => console.log(service));
+                this.proposeServ.addService(object).subscribe();
 
                 let serviceDescription: {[k: string]: any} = {};
                 serviceDescription.servId = object.servId;
                 serviceDescription.keyword = this.keywords;
 
                 this.proposeServ.addServiceDescription(serviceDescription)
-                .subscribe(servDescription => console.log(servDescription));
+                .subscribe();
 
                 availability.propOrServ = 'service';
                 availability.propOrServId = object.servId;
 
                 // Ajouter une disponibilité
-                this.proposeServ.addAvailability(availability)
-                .subscribe(availability => console.log(availability));
+                this.proposeServ.addAvailability(availability).subscribe();
 
                 this.router.navigate(['/']); // On redirige l'user sur la page d'accueil
             });

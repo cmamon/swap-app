@@ -1,15 +1,10 @@
 const Uses = require('../models/availability_model');
 
-
-
-
-
 const forOneProduct = (req, res) => {
     req.db.collection('uses').find({propOrServId: req.body.propId}).toArray((err, docs) => {
         const reponse = []
-        console.log(docs);
-        docs.forEach(el => { 
-            reponse.push({day: el.day, month: el.month, year: el.year}) 
+        docs.forEach(el => {
+            reponse.push({day: el.day, month: el.month, year: el.year})
         });
         if (err) {
             return next(err);
