@@ -29,17 +29,17 @@ export class ProposeService {
         // return an observable with a user-facing error message
         return throwError(
         'Something bad happened; please try again later.');
-    };
+    }
 
     getGoods() {
-        var o: Observable<any> = this.http.get(serverUrl + 'properties/').pipe(
+        const o: Observable<any> = this.http.get(serverUrl + 'properties/').pipe(
             catchError(this.handleError)
         );
         return o;
     }
 
     getServices() {
-        var o: Observable<any> = this.http.get(serverUrl + 'services/').pipe(
+        const o: Observable<any> = this.http.get(serverUrl + 'services/').pipe(
             catchError(this.handleError)
         );
         return o;

@@ -27,6 +27,7 @@ export class ResearchService {
         const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
         this.http.post(url, data, httpOptions).subscribe((res: []) => {
             this.services.push(...res);
+            console.log(res);
         });
     }
 

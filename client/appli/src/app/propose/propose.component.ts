@@ -11,8 +11,8 @@ import { ProposeService } from './propose.service';
 })
 export class ProposeComponent implements OnInit {
     private keywords = [];
-    selectedDay: string = '0';
-    selectedType: string = 'good';
+    selectedDay = '0';
+    selectedType = 'good';
 
     constructor(private proposeServ: ProposeService, private router: Router) {}
 
@@ -53,6 +53,8 @@ export class ProposeComponent implements OnInit {
                 object.propId = 'prop_' + (goods.length + 1);
                 object.pictureLink = form.value.image;
 
+                console.log(object);
+
                 this.proposeServ.addGood(object).subscribe();
 
                 const goodDescription: {[k: string]: any} = {};
@@ -74,6 +76,8 @@ export class ProposeComponent implements OnInit {
 
                 object.pricePerHour = form.value.price;
                 object.servId = 'serv_' + (services.length + 1);
+
+                console.log(object);
 
                 this.proposeServ.addService(object).subscribe();
 

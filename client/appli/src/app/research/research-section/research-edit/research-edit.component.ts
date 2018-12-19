@@ -30,7 +30,7 @@ export class ResearchEditComponent implements OnInit {
     if (form.value.radio === '1') {
       this.researchService.searchProperties({research: keywordsOK, days : days});
     } else {
-      this.researchService.searchServices({research: keywordsOK});
+      this.researchService.searchServices({research: keywordsOK, days : days});
     }
   }
 

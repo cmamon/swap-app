@@ -6,8 +6,7 @@
 		"lastName" : "",
 		"city" : "",
 		"address" : "",
-		"phone" :  "",
-		"score": 0
+		"phone" :  ""
 	},
 	{
 		"email" : "pompidor@lirmm.fr",
@@ -16,8 +15,7 @@
 		"lastName" : "Pompidor",
 		"city" : "Montpellier",
 		"address" : "1 rue des pommes",
-		"phone" :  "0606060606",
-		"score": 0
+		"phone" :  "0606060606"
 	},
 	{
 		"email" : "julien.rousse@etu.umontpellier.fr",
@@ -26,8 +24,7 @@
 		"lastName" : "Roussé",
 		"city" : "Montpellier",
 		"address" : "2 rue des pommes",
-		"phone" :  "0666666666",
-		"score": 0
+		"phone" :  "0666666666"
 	},
 	{
 		"email" : "christophe.quenette@etu.umontpellier.fr",
@@ -36,8 +33,7 @@
 		"lastName" : "Quenette",
 		"city" : "Montpellier",
 		"address" : "3 rue des pommes",
-		"phone" :  "0707070707",
-		"score": 0
+		"phone" :  "0707070707"
 	},
 	{
 		"email" : "dorian.do@etu.umontpellier.fr",
@@ -46,8 +42,7 @@
 		"lastName" : "Rousse",
 		"city" : "Montpellier",
 		"address" : "4 rue des pommes",
-		"phone" :  "0777777777",
-		"score": 0
+		"phone" :  "0777777777"
 	},
 	{
 		"email" : "aurelie.murcia@etu.umontpellier.fr",
@@ -56,8 +51,7 @@
 		"lastName" : "Murcia",
 		"city" : "Montpellier",
 		"address" : "5 rue des pommes",
-		"phone" :  "0612341234",
-		"score": 0
+		"phone" :  "0612341234"
 	},
 	{
 		"email" : "addresseBidon@gemail.com",
@@ -66,7 +60,6 @@
 		"lastName" : "Bidon",
 		"city" : "Montpellier",
 		"address" : "6 rue des pommes",
-		"phone" :  "0676543210",
-		"score": 0
+		"phone" :  "0676543210"
 	}
 ]

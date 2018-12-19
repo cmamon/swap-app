@@ -12,12 +12,11 @@ const list = (req, res) => {
 
 const add = (req, res, next) => {
     let user = new Service(
-        req.body.propId,
+        req.body.servId,
         req.body.owner,
         req.body.title,
         req.body.description,
-        req.body.pictureLink,
-        req.body.price
+        req.body.pricePerHour
     );
 
     req.db.collection('services').insertOne(user, (err) => {
@@ -46,18 +45,16 @@ const search = (req, res, next) => {
         res.setHeader('Content-type', 'application/json');
 
         for (let doc of docs) {
-            req.db.collection('services').find( { 'servId': doc.servId } ).toArray((err, docs) => {
+            req.db.collection('services').find( { "servId": doc.servId } ).toArray((err, docs) => {
                 let serv = docs[0];
-		let query = {};
+        		let query = {};
 
-		if (req.body.date) {
-                	query = {
-                    	"propOrServId": serv.servId,
-                    	"weekNumber" : req.body.date.week,
-                    	"dayNumber" : req.body.date.day,
-                    	"AMPM" : req.body.date.ampm
-                	};
-		}
+        		if (req.body.days) {
+                    query = {
+                        "propOrServId" : serv.servId,
+                        "days" : {$in : req.body.days}
+                    };
+        		}
 
                 //if(date pas defaut)
                 req.db.collection('availabilities').find(query).toArray((err, docs)=> {
