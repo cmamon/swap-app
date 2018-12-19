@@ -42,10 +42,25 @@ export class ResearchService {
         const results = [];
         const url = serverUrl + 'uses/forOne';
         const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
-        this.http.post(url, {propId: id}, httpOptions).subscribe((res: []) => {
+        this.http.post(url, {prodId: id}, httpOptions).subscribe((res: []) => {
             results.push(...res);
         });
-        console.log(results);
         return results;
+    }
+
+    getAvailabilities(id: string) {
+        const results = [];
+        const url = serverUrl + 'availabilities/forOne';
+        const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+        this.http.post(url, {prodId: id}, httpOptions).subscribe((res: []) => {
+            results.push(...res);
+        });
+        return results;
+    }
+
+    onReserved(data) {
+        const url = serverUrl + 'uses/book';
+        const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+        this.http.post(url, data, httpOptions).subscribe((res: []) => { });
     }
 }

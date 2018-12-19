@@ -22,12 +22,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
             .getAuthStatusListener()
             .subscribe(isAuthenticated => {
                 this.userIsAuthenticated = isAuthenticated;
+                const user = localStorage.getItem('currentUser');
+                if (user) {
+                    this.username = JSON.parse(user).data.firstName;
+                }
             });
-
-        const user = localStorage.getItem('currentUser');
-        if (user) {
-            this.username = JSON.parse(user).data.firstName;
-        }
     }
 
     ngOnDestroy() {

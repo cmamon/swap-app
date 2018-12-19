@@ -35,14 +35,14 @@ export class ProposeComponent implements OnInit {
 
         const userEmail = JSON.parse(userData).data.email;
 
-        let object: {[k: string]: any} = {};
+        const object: {[k: string]: any} = {};
         object.title = form.value.title;
         object.owner = userEmail;
         object.description = form.value.description;
 
-        let availability: {[k: string]: any} = {};
-        availability.propOrServ = "";
-        availability.propOrServId = "";
+        const availability: {[k: string]: any} = {};
+        availability.propOrServ = '';
+        availability.propOrServId = '';
         availability.days = form.value.day.map(Number);
 
         /* Ajouter le bien ou le service */
@@ -51,10 +51,11 @@ export class ProposeComponent implements OnInit {
 
                 object.price = form.value.price;
                 object.propId = 'prop_' + (goods.length + 1);
+                object.pictureLink = form.value.image;
 
                 this.proposeServ.addGood(object).subscribe();
 
-                let goodDescription: {[k: string]: any} = {};
+                const goodDescription: {[k: string]: any} = {};
                 goodDescription.propId = object.propId;
                 goodDescription.keyword = this.keywords;
 
@@ -76,7 +77,7 @@ export class ProposeComponent implements OnInit {
 
                 this.proposeServ.addService(object).subscribe();
 
-                let serviceDescription: {[k: string]: any} = {};
+                const serviceDescription: {[k: string]: any} = {};
                 serviceDescription.servId = object.servId;
                 serviceDescription.keyword = this.keywords;
 

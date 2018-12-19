@@ -23,25 +23,28 @@
                         Select a date
                     </mat-panel-description>
                 </mat-expansion-panel-header>
-        
-                <mat-form-field id="date">
-                    <input 
-                    matInput 
-                    [matDatepickerFilter]="myFilter"
-                    [min]="today"
-                    [matDatepicker]="picker" 
-                    name="dateChoice"
-                    ngModel
-                    placeholder="Choose a date (optionnal)">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-                    
-                <button
-                    (click) = "onBuy()" 
-                    mat-raised-button
-                    color="primary"
-                    type="submit"> Buy </button>
+
+                <form *ngIf="!reserved" (submit)="onSubmit(reserveForm, $event)" #reserveForm="ngForm">
+                    <mat-form-field id="date">
+                        <input 
+                        matInput 
+                        [matDatepickerFilter]="myFilter"
+                        [min]="today"
+                        [matDatepicker]="picker" 
+                        name="dateChoice"
+                        ngModel
+                        required
+                        placeholder="Choose a date (optionnal)">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                        
+                    <button
+                        mat-raised-button
+                        color="primary"
+                        type="submit"> Buy </button>
+                </form>
+                <p *ngIf="reserved"> Thank You for your reservation </p>
                 
             </mat-expansion-panel>
         </mat-accordion>

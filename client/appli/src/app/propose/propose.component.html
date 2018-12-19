@@ -1,9 +1,7 @@
 <mat-card>
     <mat-card-title>Give the details</mat-card-title>
-    <mat-grid-list cols="1" rowHeight="2:1">
-        <mat-grid-tile>
             <form (submit)="onSubmit(proposeForm)" #proposeForm="ngForm">
-                <mat-radio-group required name="goodOrServ" [ngModel]="selectedType" ngModel>
+                <mat-radio-group required name="goodOrServ" [(ngModel)]="selectedType" ngModel>
                     <p><mat-radio-button value="good"> Good </mat-radio-button>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <mat-radio-button value="service"> Service </mat-radio-button>
@@ -16,6 +14,10 @@
 
                 <mat-form-field>
                     <textarea matInput placeholder="Give a description" name="description" ngModel required></textarea>
+                </mat-form-field>
+
+                <mat-form-field *ngIf="selectedType=='good'">
+                    <input matInput type="text" name="image" placeholder="Image URL" required ngModel>
                 </mat-form-field>
 
                 <mat-form-field>
@@ -42,6 +44,4 @@
                 <br>
                 <button mat-raised-button color="primary" type="submit">Propose</button>
             </form>
-        </mat-grid-tile>
-    </mat-grid-list>
 </mat-card>
