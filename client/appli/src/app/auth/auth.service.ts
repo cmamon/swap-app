@@ -40,8 +40,9 @@ export class AuthService {
 
     autoAuthUser() {
         const authInfo = this.getAuthData();
-        if (authInfo && authInfo.token) {
+        if (authInfo) {
             this.token = authInfo.token;
+            this.user = authInfo;
             this.isAuth = true;
             this.authStatusListener.next(true);
         }
@@ -50,11 +51,11 @@ export class AuthService {
     private getAuthData() {
         const userData = localStorage.getItem('currentUser');
         if (userData) {
-            const token = JSON.parse(userData).token;
-            if (!token) {
+            const currentUser = JSON.parse(userData);
+            if (!currentUser.token) {
                 return;
             }
-            return {token: token};
+            return currentUser;
         }
     }
 

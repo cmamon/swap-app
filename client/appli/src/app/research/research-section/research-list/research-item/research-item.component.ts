@@ -28,7 +28,7 @@ export class ResearchItemComponent implements OnInit, OnDestroy {
 
     const date = {day: day, month: month, year: year};
 
-    if (this.availabilities.includes(d.getDay())) {
+    if (!this.availabilities.includes(d.getDay())) {
       return false;
     }
     for (let i = 0; i < this.reservations.length; i++) {
